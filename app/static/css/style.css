@@ -181,6 +181,7 @@ textarea.form-control {
 .btn:active,
 .btn.active {
 	outline: inherit !important;
+	color:whitesmoke;
 }
 
 /* Button size */
@@ -336,8 +337,8 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #home {
-	background: url("https://placehold.it/1200x750");
-	/*background: url("../images/silhouette-children.jpg");*/
+	/*background: url("https://placehold.it/1200x750");*/
+	background: url("../images/silhouette-children.jpg");
 	/*background: url("../images/background.jpg");*/
 	background-color: #222;
 	background-attachment: fixed;
@@ -388,13 +389,21 @@ textarea.form-control {
 	margin: 15px 0;
 }
 
+.box {
+    /*margin-bottom: 5px;*/
+    padding: 15px;
+    background: #fff;
+    background: rgba(255,255,255,0.95);
+    border-radius: 2px;
+}
+
 /* ---------------------------------------------- /*
  * Service
 /* ---------------------------------------------- */
 
 .iconbox {
 	background: #fff;
-	border-bottom: 1px solid #d4d4d4;
+	border-bottom: 2px solid #d4d4d4;
 	text-align: center;
 	padding: 40px 20px;
 	margin: 0 0 20px;

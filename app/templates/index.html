@@ -6,7 +6,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Clean - One Page Personal Portfolio</title>
+	<title>Canopy Care</title>
 
 	<!-- CSS -->
 	<link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -56,9 +56,9 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html">
-						<img src="../static/images/canopy-logo.png" height="30" style="padding:0; margin-top:-10px">
-						<p id="catchphrase">Like a doctor in the family</p>
+					<a class="navbar-brand" href="{{ url_for('index') }}">
+						<img src="../static/images/canopy-logo.png" height="43" style="padding:0; margin-top:-10px">
+						<!--<p id="catchphrase">Like a doctor in the family</p>-->
 					</a>
 				</div>
 
@@ -85,56 +85,51 @@
 
 	<section id="home" class="pfblock-image screen-height">
 		<div class="container">
+
 			<div class="row">
 
 				<div class="col-sm-4 col-sm-offset-8">
-					<div class="pfblock-line"></div>
-					<!--<div class="pfblock-header">-->
-						<div class="pfblock-subtitle text-center">
+
+					<div class="box" style="margin-top:15px">
+
+						<div class="pfblock-subtitle text-center" style="color:black">
 							Get your free consultation.
 						</div>
-						<br>
-					<!--</div>-->
+						<div class="pfblock-line" style="margin-top:5px; margin-bottom:5px;"></div>
 
-				</div>
+						<form id="contact-form" role="form" action="/api/email">
+							<div class="ajax-hidden">
+								<div class="form-group wow fadeInUp">
+									<label class="sr-only" for="c_name">Name</label>
+									<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name">
+								</div>
 
-			</div><!-- .row -->
+								<div class="form-group wow fadeInUp" data-wow-delay=".1s">
+									<label class="sr-only" for="c_email">Email</label>
+									<input type="email" id="c_email" class="form-control" name="c_email" placeholder="Email">
+								</div>
 
-			<div class="row">
+								<div class="form-group wow fadeInUp" data-wow-delay=".1s">
+									<label class="sr-only" for="c_phone">Phone</label>
+									<input type="text" id="c_phone" class="form-control" name="c_phone" placeholder="Phone Number">
+								</div>
 
-				<div class="col-sm-4 col-sm-offset-8">
+								<div class="form-group wow fadeInUp" data-wow-delay=".1s">
+									<label class="sr-only" for="c_zip">Zip</label>
+									<input type="text" id="c_zip" class="form-control" name="c_zip" placeholder="Zip Code">
+								</div>
 
-					<form id="contact-form" role="form">
-						<div class="ajax-hidden">
-							<div class="form-group wow fadeInUp">
-								<label class="sr-only" for="c_name">Name</label>
-								<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name">
+								<div class="form-group wow fadeInUp" data-wow-delay=".2s">
+									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your reason for visiting."></textarea>
+								</div>
+
+								<button id="email" type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">
+									<span id="email_spinner" style="color:white"></span> Send Message
+								</button>
 							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Email</label>
-								<input type="email" id="c_email" class="form-control" name="c_email" placeholder="Email">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Phone</label>
-								<input type="text" id="c_phone" class="form-control" name="c_phone" placeholder="Phone Number">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".1s">
-								<label class="sr-only" for="c_email">Zip</label>
-								<input type="text" id="c_zip" class="form-control" name="c_zip" placeholder="Zip Code">
-							</div>
-
-							<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-								<textarea class="form-control" id="c_message" name="c_message" rows="5" placeholder="Tell us about your reason for visiting."></textarea>
-							</div>
-
-							<button type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">Send Message</button>
-						</div>
-						<div class="ajax-response"></div>
-					</form>
-
+							<div class="ajax-response"></div>
+						</form>
+					</div>
 				</div>
 
 			</div><!-- .row -->
@@ -220,7 +215,8 @@
 				<div class="col-sm-6">
 
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="http://placehold.it/800x600">
+						<img class="img-responsive" src="../static/images/girl-teddy.jpg">
+						<!--<img class="img-responsive" src="http://placehold.it/800x600">-->
 					</div>
 
 				</div>
@@ -231,10 +227,13 @@
 						<h2 class="pfblock-title">Our Mission</h2>
 						<div class="pfblock-line"></div>
 						<p class="text-left">
-							Canopy Care is a premium on-demand pediatric care service. Through phone calls, messaging, email, as well as in-home sick visits, we provide high-quality healthcare for your child that is accessible, affordable and convenient for you. No more unnecessary trips to the clinic, no more unanswered questions, and no more haggling over payment with insurance companies.
+							Canopy Care provides high-quality healthcare for your child that is accessible, affordable and convenient for <em>you</em>.
 						</p>
 						<p class="text-left">
-							Whether to diagnose a sore throat, answer general questions, or address long-term wellness, we want you to have constant and frequent access to a knowledgeable and committed provider. We believe this form of high-touch and interactive care will improve your child’s health and your own peace of mind.
+							With us, you have constant and frequent access to your personal, dedicated provider. We are always one call or text away, and we come to you whenever you need us.
+						</p>
+						<p class="text-left">
+							Your child’s health matters. So does your peace of mind. We take care of both.
 						</p>
 					</div>
 
@@ -278,12 +277,12 @@
 
 					<div class="iconbox wow fadeInRightBig" data-wow-delay=".1s" style="background-color:lightgray">
 						<div class="iconbox-icon">
-							1
+							<span class="icon-login small"></span> Sign Up
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Web Design</h3>-->
 							<div class="iconbox-desc">
-								Sign up for a FREE consultation with one of our licensed and board-certified pediatric nurse practitioners (PNPs). During this visit, you will establish a medical baseline, discuss your child’s history, outline key health and wellness goals, and ask any questions.
+								Sign up for a consultation with one of our pediatric nurse practitioners (PNPs). Decide if our service works for you.
 							</div>
 						</div>
 					</div>
@@ -294,12 +293,12 @@
 
 					<div class="iconbox wow fadeInRightBig" data-wow-delay=".6s" style="background-color:lightgray">
 						<div class="iconbox-icon">
-							2
+							<span class="icon-check small"></span> Subscribe
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Web Programming</h3>-->
 							<div class="iconbox-desc">
-								Enroll in the service. We offer six- and twelve-month subscriptions at affordable rates.
+								We offer six- and twelve-month subscriptions at affordable rates. See our prices here.
 							</div>
 						</div>
 					</div>
@@ -310,12 +309,12 @@
 
 					<div class="iconbox wow fadeInRightBig" data-wow-delay="1.1s" style="background-color:lightgray">
 						<div class="iconbox-icon">
-							3
+							<span class="icon-emoticon-smile small"></span> Enjoy
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Branding</h3>-->
 							<div class="iconbox-desc">
-								Begin enjoying round-the-clock access to your PNP as well as our support staff at Canopy, through phone, messaging, and e-mail. If a face-to-face interaction is required, your PNP will come to you for a flat fee.
+								Enjoy direct access to your PNP as well as our support staff at Canopy. For face-to-face visits, your PNP will come to you for a flat fee.
 							</div>
 						</div>
 					</div>
@@ -377,7 +376,7 @@
 								</div>
 								<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
 								  <div class="panel-body">
-									A PNP is an Advanced Registered Nurse Practitioner who specializes in the diagnosis, treatment, and management of infants, children, adolescents, and young adults, ages 0-21 (this does including prescribing medications). He or she has to have either a Master’s of Science in Nursing or a Doctor of Nursing Practice from a reputable program to be allowed to sit for national board certification in pediatrics. Once this has been achieved, a PNP has to be licensed in the state he/she practices. Each state has different laws for how much PNPs can do, though they are fully capable from their training to act independently as primary care providers. All university programs, the National Association of Pediatric Nurse Practitioners, the American Association of Nurse Practitioners, as well as the Institute of Medicine agree that Nurse Practitioners should practice to the full extent of their education. Nurse Practitioners are known for being holistic and approaching their patients from all health aspects: physical well-being, mental health, nutrition, preventative practices (including integrative health), and the acute disease process.
+									A PNP is an Advanced Registered Nurse Practitioner who specializes in the diagnosis, treatment, and management of infants, children, adolescents, and young adults, ages 0-21 (this does including prescribing medications). He or she has to have either a Master’s of Science in Nursing or a Doctor of Nursing Practice from a reputable program to be allowed to sit for national board certification in pediatrics. Once this has been achieved, a PNP has to be licensed in the state he/she practices. Each state has different laws for how much PNPs can do, though they are fully capable from their training to act independently as primary care providers. All university programs, the National Association of Pediatric Nurse Practitioners, the American Association of Nurse Practitioners, as well as the Institute of Medicine agree that Nurse Practitioners should practice to the full extent of their education. Nurse Practitioners are known for being holistic and approaching their patients from all health aspects: physical well-being, mental health, nutrition, preventative practices (including integrative health), and the acute disease process. All of our PNPs are board-certified in Pediatrics.
 								  </div>
 								</div>
 							  </div>
@@ -391,7 +390,7 @@
 								</div>
 								<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
 								  <div class="panel-body">
-									No, we are not an insurance provider. Our subscription offers customers continuous access to their dedicated PNP. Our PNPs are trained to consult, diagnose, and treat to the best of their ability, and in accordance with our Best Practices. This does not constitute insurance in the event of an emergency or other acute illnesses, and in such cases, our PNPs will be quick to advise patients to seek emergency services through their PCP, urgent care, or ERs.
+									No, we are not an insurance provider. Our PNPs are trained to consult, diagnose, and treat to the best of their ability, and in accordance with our Best Practices. This does not constitute insurance in the event of an emergency or other acute illnesses. In such cases, our PNPs will be quick to advise patients to seek emergency services through their PCP, urgent care, or ERs.
 								  </div>
 								</div>
 							  </div>
@@ -405,7 +404,7 @@
 								</div>
 								<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
 								  <div class="panel-body">
-									No, we do not accept insurance. At Canopy, we don’t believe in holding families responsible if insurance does not cover our services. Instead of constantly worrying what your policy will or won’t cover, our subscription model gives you certainty that you can receive the care your child needs at a reasonable and clear cost to you. You may be able to use your health savings account, however (HSA).
+									No, we do not accept insurance. At Canopy, we don’t believe in holding families responsible if insurance does not cover our services. Instead of constantly worrying what your policy will or won’t cover, our subscription and flat fee model gives you certainty that you can receive the care your child needs at a reasonable cost to you.
 								  </div>
 								</div>
 							  </div>
@@ -489,8 +488,8 @@
 					<div class="pfblock-header wow fadeInUp">
 						<h2 class="pfblock-title">About Us</h2>
 						<div class="pfblock-line"></div>
-						<p>
-							Canopy Care is a small business founded by an experienced PNP and a few associates. We were unsatisfied with the lack of access and convenience that parents had for medical services. Ask any parent and they will tell you that protecting a child’s health is a 24/7 operation; Canopy strives to be a trusted partner in that task. We offer care based on three core tenets:
+						<p class="text-left">
+							Canopy Care is a small business founded by an experienced PNP and a few associates. We were unsatisfied with the lack of access and convenience that parents had for medical services. Protecting a child’s health is a 24/7 operation. Canopy strives to be a trusted partner in that task based on three core tenets:
 						</p>
 					</div>
 
@@ -499,34 +498,35 @@
 			</div><!-- .row -->
 
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-2">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="http://placehold.it/400x100">
+						<img class="img-responsive" src="../static/images/baby-father-hand.jpg">
 					</div>
 				</div>
-				<div class="col-sm-8">
-					<p>It’s <strong>personal</strong>: unlike conglomerate insurance companies and hospital networks, you work with a dedicated PNP that knows your child and your family.  Your medical history is securely documented, and always available to you.</p>
+				<div class="col-sm-10">
+					<p>It’s <strong>personal</strong>: unlike conglomerate insurance companies and hospital networks, you work with a dedicated PNP that knows your child and your family.  Your child’s medical history is securely documented, and always available to you.</p>
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-2">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="http://placehold.it/400x100">
+						<img class="img-responsive" src="../static/images/health-tech.jpg">
 					</div>
 				</div>
-				<div class="col-sm-8">
-					<p>It's <strong>accessible</strong>: your NP is always a message or call away, and when visits are needed we come to you or where your child is.</p>
+				<div class="col-sm-10">
+					<p>It's <strong>accessible</strong>: your PNP is always a message or call away, and when visits are needed we come to you or where your child is. No hassle, no stress.</p>
 				</div>
 			</div>
 			<br>
 			<div class="row">
-				<div class="col-sm-4">
+				<div class="col-sm-2">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="http://placehold.it/400x100">
+						<!--<img class="img-responsive" src="http://placehold.it/100x100">-->
+						<img class="img-responsive" src="../static/images/bridge-rainforest.jpg">
 					</div>
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-10">
 					<p>It's focused on the <strong>long-term</strong>: we help you achieve wellness for your child through preventative medicine, consultation, and guidance. We aim to be a trusted partner in your child's long-run development.</p>
 				</div>
 			</div>
@@ -558,30 +558,36 @@
 
 				<div class="col-sm-4">
 					<div class="wow slideInLeft">
-						<img class="img-responsive" src="http://placehold.it/400x400">
+						<!--<img class="img-responsive" src="http://placehold.it/400x400">-->
+						<img class="img-responsive" src="../static/images/multiethnic-medical-team.jpg">
 					</div>
 				</div>
 
 				<div class="col-sm-8">
 					<p>
-						Are you a pediatric nurse practitioner looking for a new employment opportunity? Apply now to be our part of our PNP team. Our PNPs have the freedom to manage their own time, schedule, and caseload, work directly with their patients on an ongoing basis through a modern, multi-dimensional platform, and take ownership in their patients’ overall health and wellness. The business succeeds by making our customers happy, not through insurance reimbursements, and we welcome our PNPs who share that same vision.
+						Are you a pediatric nurse practitioner looking for a new employment opportunity? Apply now to be our part of our PNP team! Our PNPs:
+					</p>
+					<ul>
+						<li>Have the freedom to manage their own time, schedule, and caseload,</li>
+						<li>Work directly with their patients on an ongoing basis through a modern, multi-dimensional platform,</li>
+						<li>Take ownership in their patients’ overall health and wellness.</li>
+					</ul>
+					<p>
+						The business succeeds by making our customers happy, not through insurance reimbursements, and we welcome our PNPs who share that same vision.
 					</p>
 					<p>
-						Are you a soon-to-be PNP? Canopy welcomes interns as well. Interns help with the consultation process, medical records management, and get exposure to our network of PNPs and health professionals. It is a great way for aspiring practitioners to get exposed to modern, transformational pediatric care.
+						Are you a soon-to-be PNP? Canopy welcomes interns as well! Interns help with the consultation process, medical records management, and get exposure to our network of PNPs and health professionals. It is a great way for aspiring practitioners to get exposed to modern, transformational pediatric care.
 					</p>
-					<!--<button class="btn btn-success" id="toggle-dropzone-btn" onclick="toggle_dropzone()" style="margin-bottom:10px">Upload Images</button>-->
+					<p>
+						If interested, please send a resume and cover letter to careers@canopy.care or use our upload service.
+					</p>
 
 					<button id="toggle-dropzone-btn" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s" onclick="toggle_dropzone()" style="margin-bottom: 10px">
 						Upload Your Resume
 					</button>
 
-
-					<!--<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>-->
-
-
 					<div class="container" id="dropzone-area" style="width:100%">
-						<form class="dropzone" id="image-dropzone" method="post" action="/">
-								<!--action="/admin/image/upload?product_id={{ product_id }}"-->
+						<form class="dropzone" id="image-dropzone" method="post" action="/api/upload">
 						</form>
                 	</div>
 
@@ -643,7 +649,7 @@
 	<script src="../static/js/wow.min.js"></script>
     <script src="../static/js/waypoints.min.js"></script>
     <script src="../static/js/jquery.cbpQTRotator.js"></script>
-	<script src="../static/js/cbpAnimatedHeader.js"></script>
+	<!--<script src="../static/js/cbpAnimatedHeader.js"></script>-->
 	<!--http://tympanus.net/codrops/2013/06/06/on-scroll-animated-header/-->
 	<script src="../static/js/dropzone.js"></script>
 	<script src="../static/js/custom.js"></script>

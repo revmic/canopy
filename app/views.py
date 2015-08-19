@@ -1,6 +1,7 @@
 from flask import render_template  # , redirect, url_for, flash, request
 
 import app
+from app.forms import ContactForm
 # from app import mailer
 
 debug = 'DEBUG'
@@ -12,4 +13,6 @@ error = 'ERROR'
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html", title='Canopy Care')
+    form = ContactForm()
+
+    return render_template("index.html", form=form, title='Canopy Care')

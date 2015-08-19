@@ -136,35 +136,58 @@
 
 			e.preventDefault();
 
+			var email_spinner = $('#email_spinner');
 			var c_name = $('#c_name').val();
 			var c_email = $('#c_email').val();
+			var c_phone = $('#c_phone').val();
+			var c_zip = $('#c_zip').val();
 			var c_message = $('#c_message ').val();
-			var response = $('#contact-form .ajax-response');
+			var ajax_response = $('#contact-form').find('.ajax-response');
 			
 			var formData = {
 				'name'       : c_name,
 				'email'      : c_email,
+				'phone' 	 : c_phone,
+				'zip'		 : c_zip,
 				'message'    : c_message
 			};
 
 			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
-				response.fadeIn(500);
-				response.html('<i class="fa fa-warning"></i> Please fix the errors and try again.');
-			}
+				ajax_response.fadeIn(500);
+				ajax_response.html(
+					'<i class="fa fa-warning"></i> ' +
+					'All fields required. Please try again.'
+				).css("color", "#E7746F");
+			} else {
+				email_spinner.addClass("fa fa-cog fa-spin");
 
-			else {
 				$.ajax({
-					type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-					url         : 'assets/php/contact.php', // the url where we want to POST
-					data        : formData, // our data object
-					dataType    : 'json', // what type of data do we expect back from the server
-					encode      : true,
-					success		: function(res) {
-						var ret = $.parseJSON(JSON.stringify(res));
-						response.html(ret.message).fadeIn(500);
+					type: 'POST',
+					url: '/api/email',
+					//data: $('form').serialize(),
+					data: formData,
+					dataType: 'json',
+					encode: true,
+					success: function(res) {
+						console.log(res);
+
+						ajax_response.fadeIn(500);
+						ajax_response.html(
+							'<span class="icon-paper-plane"></span> ' +
+							'Your message was sent successfully. We will get back to you shortly.'
+						).css("color", "green");
+
+						email_spinner.removeClass("fa fa-cog fa-spin");
+						email_spinner.addClass("fa fa-check-circle-o");
+
+					},
+					error: function(error) {
+						console.log(error);
+						email_spinner.removeClass("fa fa-cog fa-spin");
 					}
 				});
 			}
+
 			return false;
 		});
 
