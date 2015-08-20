@@ -42,8 +42,8 @@
 
 		$('body').scrollspy({
 			target: '.navbar-custom',
-			offset: 70
-		})
+			offset: 0
+		});
 
         
         /* ---------------------------------------------- /*
@@ -51,27 +51,27 @@
         /* ---------------------------------------------- */    
         //var color = $('#home').css('backgroundColor');
 
-        $('.skills').waypoint(function(){
-            $('.chart').each(function(){
-            $(this).easyPieChart({
-                    size:140,
-                    animate: 2000,
-                    lineCap:'butt',
-                    scaleColor: false,
-                    barColor: '#FF5252',
-                    trackColor: 'transparent',
-                    lineWidth: 10
-                });
-            });
-        },{offset:'80%'});
+        //$('.skills').waypoint(function(){
+        //    $('.chart').each(function(){
+        //    $(this).easyPieChart({
+        //            size:140,
+        //            animate: 2000,
+        //            lineCap:'butt',
+        //            scaleColor: false,
+        //            barColor: '#FF5252',
+        //            trackColor: 'transparent',
+        //            lineWidth: 10
+        //        });
+        //    });
+        //},{offset:'80%'});
         
         
         /* ---------------------------------------------- /*
 		 * Quote Rotator
 		/* ---------------------------------------------- */
        
-			$( function() {
-				/*
+			/*$( function() {
+
 				- how to call the plugin:
 				$( selector ).cbpQTRotator( [options] );
 				- options:
@@ -85,11 +85,10 @@
 				}
 				- destroy:
 				$( selector ).cbpQTRotator( 'destroy' );
-				*/
 
 				$( '#cbp-qtrotator' ).cbpQTRotator();
 
-			} );
+			} );*/
 		
         
 		/* ---------------------------------------------- /*
@@ -152,11 +151,13 @@
 				'message'    : c_message
 			};
 
-			if (( c_name== '' || c_email == '' || c_message == '') || (!isValidEmailAddress(c_email) )) {
+			if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
+				(!isValidEmailAddress(c_email) )) {
+
 				ajax_response.fadeIn(500);
 				ajax_response.html(
 					'<i class="fa fa-warning"></i> ' +
-					'All fields required. Please try again.'
+					'All fields except message are required. Please try again.'
 				).css("color", "#E7746F");
 			} else {
 				email_spinner.addClass("fa fa-cog fa-spin");
@@ -187,10 +188,31 @@
 					}
 				});
 			}
-
 			return false;
 		});
-
 	});
 
 })(jQuery);
+
+function toggleChevron(e) {
+	$(e.target)
+		.prev('.panel-heading')
+		.find("i.indicator")
+		.toggleClass('fa-chevron-down fa-chevron-up');
+}
+
+var faq = $('#accordion');
+faq.on('hide.bs.collapse', toggleChevron);
+faq.on('shown.bs.collapse', toggleChevron);
+
+
+function toggle_dropzone() {
+	$("#dropzone-area").toggle(500);
+}
+
+function show_pricing() {
+	$('html, body').animate({
+		scrollTop: $("#faq").offset().top
+	}, 750);
+	$('#collapse0').collapse('show');
+}

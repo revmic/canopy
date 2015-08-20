@@ -5,6 +5,7 @@ body {
 	font: 300 14px/1.8 'Raleway', sans-serif;
 	color: #666;
 	overflow-x: hidden;
+	/*padding-top: 70px;*/
 }
 
 img {
@@ -190,7 +191,8 @@ textarea.form-control {
 .btn-group-lg > .btn {
 	padding: 10px 25px;
 	font-size: 13px;
-    background: rgba(17, 17, 17, 0.8);
+    /*background: rgba(17, 17, 17, 0.8);*/
+	background: #2F7B4B;
     color: #fff;
 }
 .btn-lg:hover,
@@ -338,12 +340,8 @@ textarea.form-control {
 
 #home {
 	/*background: url("https://placehold.it/1200x750");*/
-	background: url("../images/silhouette-children.jpg");
 	/*background: url("../images/background.jpg");*/
-	background-color: #222;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
+	background: white url("../images/bubble-fun-on-green.jpg") no-repeat 50% 50% scroll;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
@@ -407,6 +405,9 @@ textarea.form-control {
 	text-align: center;
 	padding: 40px 20px;
 	margin: 0 0 20px;
+	border-radius:50%;
+	/*width:250px;*/
+	/*height:250px;*/
 }
 
 .iconbox-icon {
@@ -469,7 +470,7 @@ textarea.form-control {
 #footer {
 	background: #222;
 	text-align: center;
-	padding: 40px 0;
+	padding: 20px 0;
 	color: #FFF;
 }
 
@@ -564,6 +565,11 @@ textarea.form-control {
 	font-weight: 700;
 	font-size: 22px;
     font-family: Lobster, cursive;
+}
+
+.navbar-custom .navbar-brand img {
+	height:45px;
+	margin-top:-10px;
 }
 
 .navbar-custom .dropdown-menu {
@@ -692,12 +698,11 @@ textarea.form-control {
  * Media
 /* ---------------------------------------------- */
 
-@media (max-width: 767px) {
 
+@media (max-width: 767px) {
 	.calltoaction {
 		text-align: center;
 	}
-
 }
 
 @media (max-width: 1000px) {
@@ -705,6 +710,10 @@ textarea.form-control {
 		padding-left: 15px;
 		padding-right: 0;
 		letter-spacing: 1px;
+	}
+	.navbar-custom .navbar-brand img {
+		height: 35px;
+		margin-top: -5px;
 	}
 }
 
@@ -724,9 +733,9 @@ textarea.form-control {
 }
 
 
-/*--------------------------------*/
-/***** Portfolio Common style *****/
-/*--------------------------------*/
+/*-----------------------------------*/
+/***** How It Works Common style *****/
+/*-----------------------------------*/
 
 .grid {
 	position: relative;
@@ -986,3 +995,22 @@ figure.effect-bubba:hover p {
 
 }
 
+
+.fb-like {
+	position:relative;
+	top:8px;
+	padding-left:5px;
+}
+
+.panel-title {
+	text-transform: none;
+}
+.panel-body {
+	text-align: left;
+}
+.indicator {
+	margin-top: -15px;
+}
+.panel-heading a {
+	color: #2F7B4B;
+}

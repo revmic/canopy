@@ -6,7 +6,9 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Canopy Care</title>
+	<title>Canopy Care - We've got you covered</title>
+
+	<link rel="shortcut icon" type="image/x-icon" href="../static/images/favicon.ico">
 
 	<!-- CSS -->
 	<link href="../static/css/bootstrap.min.css" rel="stylesheet" media="screen">
@@ -19,34 +21,41 @@
 	<link href="../static/css/style.css" rel="stylesheet" media="screen">
     
     <script src="../static/js/modernizr.custom.js"></script>
-       
 </head>
 
-<style>
-	#catchphrase {
-		font-family: Raleway sans-serif;
-		font-size: xx-small;
-		text-transform: none;
-		color: gray;
-		letter-spacing: 1px;
-		margin-top: -5px;
-		margin-left: 5px;
-	}
-</style>
+<!--<style>-->
+	<!--#catchphrase {-->
+		<!--font-family: Raleway sans-serif;-->
+		<!--font-size: xx-small;-->
+		<!--text-transform: none;-->
+		<!--color: gray;-->
+		<!--letter-spacing: 1px;-->
+		<!--margin-top: -5px;-->
+		<!--margin-left: 5px;-->
+	<!--}-->
+<!--</style>-->
 
 <body>
 	<!-- Preloader -->
-
 	<div id="preloader">
 		<div id="status"></div>
 	</div>
 
+	<div id="fb-root"></div>
+	<script>
+	  (function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 	<!-- Navigation start -->
 
 	<header class="header">
-
 		<nav class="navbar navbar-custom" role="navigation">
-
 			<div class="container">
 
 				<div class="navbar-header">
@@ -57,7 +66,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{{ url_for('index') }}">
-						<img src="../static/images/canopy-logo.png" height="43" style="padding:0; margin-top:-10px">
+						<img src="../static/images/canopy-logo.png">
 						<!--<p id="catchphrase">Like a doctor in the family</p>-->
 					</a>
 				</div>
@@ -65,18 +74,17 @@
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li data-toggle="collapse" data-target=".in"><a href="#home">Home</a></li>
-						<li data-toggle="collapse" data-target=".in"><a href="#services">Mission</a></li>
-                        <li data-toggle="collapse" data-target=".in"><a href="#portfolio">How it Works</a></li>
-                        <li data-toggle="collapse" data-target=".in"><a href="#skills">FAQ</a></li>
-						<li data-toggle="collapse" data-target=".in"><a href="#testimonials">About Us</a></li>
-						<li data-toggle="collapse" data-target=".in"><a href="#contact">Careers</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#mission">Mission</a></li>
+                        <li data-toggle="collapse" data-target=".in"><a href="#works">How it Works</a></li>
+                        <li data-toggle="collapse" data-target=".in"><a href="#faq">FAQ</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#about">About Us</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#careers">Careers</a></li>
+						<li><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div></li>
 					</ul>
 				</div>
 
 			</div><!-- .container -->
-
 		</nav>
-
 	</header>
 
 	<!-- Navigation end -->
@@ -93,7 +101,7 @@
 					<div class="box" style="margin-top:15px">
 
 						<div class="pfblock-subtitle text-center" style="color:black">
-							Get your free consultation.
+							555.555.5555
 						</div>
 						<div class="pfblock-line" style="margin-top:5px; margin-bottom:5px;"></div>
 
@@ -120,16 +128,16 @@
 								</div>
 
 								<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your reason for visiting."></textarea>
+									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your family’s healthcare needs (optional)get"></textarea>
 								</div>
 
 								<button id="email" type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">
-									<span id="email_spinner" style="color:white"></span> Send Message
+									<span id="email_spinner" style="color:white"></span> Request Info Now
 								</button>
 							</div>
 							<div class="ajax-response"></div>
 						</form>
-					</div>
+					</div><!-- .box -->
 				</div>
 
 			</div><!-- .row -->
@@ -143,7 +151,6 @@
 			<div class="row">
 
 				<div class="col-sm-4">
-
 					<div class="iconbox wow slideInLeft">
 						<div class="iconbox-icon">
 							<span class="icon-clock"></span>
@@ -155,11 +162,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 
 				<div class="col-sm-4">
-
 					<div class="iconbox wow slideInUp">
 						<div class="iconbox-icon">
 							<span class="icon-home"></span>
@@ -171,11 +176,9 @@
 							</div>
 						</div>
 					</div>
-
 				</div>
 
 				<div class="col-sm-4">
-
 					<div class="iconbox wow slideInRight">
 						<div class="iconbox-icon">
 							<span class="fa fa-money"></span>
@@ -183,17 +186,16 @@
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Branding</h3>-->
 							<div class="pfblock-subtitle iconbox-desc">
-								Flat prices, no hidden charges
+								Flat prices, no hidden charges <p class="small">($60/mo $120/visit)</p>
 							</div>
 						</div>
 					</div>
-
 				</div>
 
 			</div><!-- .row -->
 		</div><!-- .container -->
 
-        <!--<a href="#services">-->
+        <!--<a href="#mission">-->
 			<!--<div class="scroll-down">-->
 				<!--<span>-->
 					<!--<i class="fa fa-angle-down fa-2x"></i>-->
@@ -205,24 +207,22 @@
 
 	<!-- Home end -->
 
+
     <!-- Mission start -->
 
-	<section id="services" class="pfblock pfblock-gray">
+	<section id="mission" class="pfblock pfblock-gray">
 		<div class="container">
 
 			<div class="row">
 
 				<div class="col-sm-6">
-
 					<div class="wow slideInRight">
 						<img class="img-responsive" src="../static/images/girl-teddy.jpg">
 						<!--<img class="img-responsive" src="http://placehold.it/800x600">-->
 					</div>
-
 				</div>
 
 				<div class="col-sm-6">
-
 					<div class="pfblock-header wow fadeInUp">
 						<h2 class="pfblock-title">Our Mission</h2>
 						<div class="pfblock-line"></div>
@@ -236,8 +236,8 @@
 							Your child’s health matters. So does your peace of mind. We take care of both.
 						</p>
 					</div>
-
 				</div>
+
 			</div><!-- end row -->
 		</div><!-- .container -->
 
@@ -251,11 +251,11 @@
 
 	</section>
 
-	<!-- Services end -->
+	<!-- Mission end -->
     
-	<!-- Portfolio start -->
+	<!-- How It Works start -->
 
-	<section id="portfolio" class="pfblock">
+	<section id="works" class="pfblock">
 		<div class="container">
 
 			<div class="row">
@@ -298,7 +298,8 @@
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Web Programming</h3>-->
 							<div class="iconbox-desc">
-								We offer six- and twelve-month subscriptions at affordable rates. See our prices here.
+								We offer six- and twelve-month subscriptions at affordable rates. See our prices
+								<a href="javascript:" onclick="show_pricing();">here</a>.
 							</div>
 						</div>
 					</div>
@@ -327,11 +328,11 @@
 
 	</section>
 
-	<!-- Portfolio end -->
+	<!-- How It Works end -->
     
-    <!-- Skills start -->
+    <!-- FAQ start -->
     
-    <section class="pfblock pfblock-gray" id="skills">
+    <section class="pfblock pfblock-gray" id="faq">
 		
 			<div class="container">
 
@@ -346,26 +347,23 @@
                                 <div class="pfblock-line"></div>
                             </div>
 
-
-
-							<style>
-								.panel-title {
-									text-transform: none;
-								}
-								.panel-body {
-									text-align: left;
-								}
-								.indicator {
-									margin-top: -15px;
-								}
-								.panel-heading a {
-									color: #2F7B4B;
-								}
-							</style>
-
-
-
 							<div class="panel-group text-center" id="accordion" role="tablist" aria-multiselectable="false">
+
+							<div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
+								<div class="panel-heading" role="tab" id="heading0">
+									<a data-toggle="collapse" data-target="#collapse0" href="javascript:" aria-expanded="true" aria-controls="collapse0" data-parent="#accordion">
+									  <h4 class="panel-title">How do I subscribe?</h4>
+									</a>
+									<i class="indicator fa fa-chevron-up pull-right"></i>
+								</div>
+								<div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+								  <div class="panel-body">
+								    <p>We offer subscription to Canopy Care on a “pay as you go,” month-by-month basis at $60/month (plus applicable taxes). The minimum commitment is two months, due upon initiation, after which each following month is charged (roughly) every 30 days. You can cancel at any time, at which point your subscription service will conclude at the end of the current month’s cycle.</p>
+									<p>As part of the subscription, we offer in-home visits at $120/visit (plus applicable taxes). Your practitioner comes to your preferred location and brings their own equipment. Payment is due at time of service. In-home visits are strictly voluntary, and not a requirement for subscription.</p>
+									<p>We accept payment via credit and debit card only. We provide itemized receipts in the case that your insurance plan accepts Canopy’s service as a medical claim against your deductible, or for reimbursement from your Flexible Spending Account (FSA) and Health Savings Account (HSA).</p>
+								  </div>
+								</div>
+							  </div>
 
 							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
 								<div class="panel-heading" role="tab" id="heading1">
@@ -449,7 +447,7 @@
 		
     </section>
     
-    <!-- Skills end -->
+    <!-- FAQ end -->
 
 	<!-- CallToAction start -->
 
@@ -475,9 +473,9 @@
 
 	<!-- CallToAction end -->
 
-	<!-- Testimonials start -->
+	<!-- About Us start -->
 
-	<section id="testimonials" class="pfblock pfblock-white">
+	<section id="about" class="pfblock pfblock-white">
 
 		<div class="container">
             
@@ -534,12 +532,12 @@
 		</div>
 	</section>
 
-	<!-- Testimonial end -->
+	<!-- About Us end -->
 
 
-	<!-- Contact start -->
+	<!-- Careers start -->
 
-	<section id="contact" class="pfblock pfblock-gray">
+	<section id="careers" class="pfblock pfblock-gray">
 		<div class="container">
 			<div class="row">
 
@@ -597,7 +595,7 @@
 		</div><!-- .container -->
 	</section>
 
-	<!-- Contact end -->
+	<!-- Careers end -->
 
 	<!-- Footer start -->
 
@@ -655,26 +653,9 @@
 	<script src="../static/js/custom.js"></script>
 
 <script>
-	function toggleChevron(e) {
-		$(e.target)
-			.prev('.panel-heading')
-			.find("i.indicator")
-			.toggleClass('fa-chevron-down fa-chevron-up');
-	}
-
-	var faq = $('#accordion');
-	faq.on('hide.bs.collapse', toggleChevron);
-	faq.on('shown.bs.collapse', toggleChevron);
-
-
-	function toggle_dropzone() {
-		$("#dropzone-area").toggle(500);
-	}
-
 	$(document).ready(function() {
 		$("#dropzone-area").hide();
 	})
-
 </script>
 
 </body>

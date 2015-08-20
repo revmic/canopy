@@ -31,7 +31,7 @@ def make_shell_context():
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
 
-app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com']
+app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care']
 app.config['MAIL_SUBJECT_PREFIX'] = '[CanopyCare]'
 app.config['MAIL_SENDER'] = 'CanopyCare Admin <admin@canopycare.com>'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
