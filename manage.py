@@ -30,8 +30,10 @@ def make_shell_context():
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
-
-app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care']
+app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'mhilema@yahoo.com',
+                                 'rachel@canopy.care', 'neal@canopy.care',
+                                 'rchlmnd006@gmail.com']
+# app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care']
 app.config['MAIL_SUBJECT_PREFIX'] = '[CanopyCare]'
 app.config['MAIL_SENDER'] = 'CanopyCare Admin <admin@canopycare.com>'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
@@ -44,8 +46,8 @@ def index():
     return render_template("index.html", title='Canopy Care')
 
 
-@app.route('/api/email', methods=['POST'])
-def email():
+@app.route('/api/contact', methods=['POST'])
+def contact():
     form = ContactForm(
         name=request.form['name'],
         email=request.form['email'],
@@ -73,6 +75,7 @@ def email():
 def upload():
     f = request.files['file']
     upload_dir = os.path.join(basedir, 'app/static/uploads')
+    abs_file_path = os.path.join(upload_dir, f.filename)
     print("INFO: Uploading " + f.filename + " to " + upload_dir)
 
     if not os.path.exists(upload_dir):
@@ -85,8 +88,26 @@ def upload():
     file_size = os.path.getsize(os.path.join(upload_dir, f.filename))
 
     # TODO email file
+    form = ContactForm(
+        message="See attached resume."
+    )
 
-    return jsonify(name=f.filename, size=file_size)
+    msg = Message(app.config['MAIL_SUBJECT_PREFIX'] + ' ' + 'Applicant',
+                  sender=app.config['MAIL_SENDER'],
+                  recipients=app.config['MAIL_RECIPIENTS'])
+    # msg.html = render_template('', form=form)
+
+    # print(f.filename)
+    # print(f.content_type)
+    with app.open_resource(abs_file_path) as fp:
+        msg.attach(f.filename, f.content_type, fp.read())
+
+    try:
+        mail.send(msg)
+    except Exception:
+        return jsonify(status='FAIL')
+
+    return jsonify(status='OK', name=f.filename, size=file_size)
 
 
 if __name__ == '__main__':

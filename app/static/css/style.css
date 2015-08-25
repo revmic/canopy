@@ -2,7 +2,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 
 body {
-	font: 300 14px/1.8 'Raleway', sans-serif;
+	font: 400 14px/1.8 'Raleway', sans-serif;
 	color: #666;
 	overflow-x: hidden;
 	/*padding-top: 70px;*/
@@ -10,6 +10,9 @@ body {
 
 img {
 	max-width: 100%;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
 	/*height: auto;*/
 }
 
@@ -233,6 +236,10 @@ textarea.form-control {
 	background: #f5f5f5;
 }
 
+.pfblock-gray p, li {
+	color: black;
+}
+
 .pfblock-image {
 	padding: 0;
 }
@@ -334,6 +341,36 @@ textarea.form-control {
 	margin-bottom: 40px;
 }
 
+.fb-like {
+	position:relative;
+	top:10px;
+	padding-left:5px;
+	overflow: hidden;
+}
+
+#fb-like-mobile {
+	position: absolute;
+	top: 14px;
+	right: 100px;
+}
+/*.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {*/
+   /*display: none !important;*/
+/*}*/
+
+.panel-title {
+	text-transform: none;
+}
+.panel-body {
+	text-align: left;
+}
+.indicator {
+	margin-top: -15px;
+}
+.panel-heading a {
+	/*color: #2F7B4B;*/
+	text-decoration: none;
+}
+
 /* ---------------------------------------------- /*
  * Home
 /* ---------------------------------------------- */
@@ -341,7 +378,7 @@ textarea.form-control {
 #home {
 	/*background: url("https://placehold.it/1200x750");*/
 	/*background: url("../images/background.jpg");*/
-	background: white url("../images/bubble-fun-on-green.jpg") no-repeat 50% 50% scroll;
+	background: white url("../images/children-bubbles.jpg") no-repeat 50% 50% scroll;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
@@ -405,14 +442,25 @@ textarea.form-control {
 	text-align: center;
 	padding: 40px 20px;
 	margin: 0 0 20px;
-	border-radius:50%;
-	/*width:250px;*/
-	/*height:250px;*/
+	border-radius:40%;
+	width:300px;
+	height:210px;
+}
+
+.iconbox-gray {
+	background: lightgray;
+	border-bottom: 2px solid #d4d4d4;
+	text-align: center;
+	padding: 40px 20px;
+	margin: 0 0 20px;
+	border-radius:40%;
+	width:300px;
+	height:250px;
 }
 
 .iconbox-icon {
 	margin: 0 0 15px;
-	font-size: 32px;
+	font-size: 28px;
 	color: #222;
 }
 
@@ -558,7 +606,8 @@ textarea.form-control {
 .navbar-custom .navbar-nav > li.active a {
 	background: none;
 	outline: 0;
-	color: #E7746F;
+	/*color: #E7746F;*/
+	color: #2F7B4B;
 }
 
 .navbar-custom .navbar-brand {
@@ -698,14 +747,7 @@ textarea.form-control {
  * Media
 /* ---------------------------------------------- */
 
-
-@media (max-width: 767px) {
-	.calltoaction {
-		text-align: center;
-	}
-}
-
-@media (max-width: 1000px) {
+@media (max-width: 1000px) and (min-width: 768px) {
 	.navbar-custom .navbar-nav > li > a {
 		padding-left: 15px;
 		padding-right: 0;
@@ -714,6 +756,60 @@ textarea.form-control {
 	.navbar-custom .navbar-brand img {
 		height: 35px;
 		margin-top: -5px;
+	}
+
+	.iconbox {
+		background: white;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		padding: 40px 20px;
+		margin: 0 0 20px;
+		border-radius:40%;
+		width:225px;
+		height:250px;
+	}
+
+	.iconbox-gray {
+		background: lightgray;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		padding: 45px 20px;
+		margin: 0 0 20px;
+		border-radius:40%;
+		width:240px;
+		height:290px;
+	}
+}
+
+@media (max-width: 767px) {
+	.calltoaction {
+		text-align: center;
+	}
+
+	.navbar-custom .navbar-brand img {
+		height: 35px;
+		margin-top: 0;
+	}
+
+	.iconbox {
+		background: white;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		margin: 0 auto 10px;
+		padding: 20px 20px;
+		border-radius:25%;
+		width:350px;
+		height:150px;
+	}
+	.iconbox-gray {
+		background: lightgray;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		padding: 20px 10px;
+		margin: 0 auto 20px;
+		border-radius:25%;
+		width:340px;
+		height:180px;
 	}
 }
 
@@ -730,6 +826,42 @@ textarea.form-control {
 		letter-spacing: 3px;
 	}
 
+	.navbar-custom .navbar-brand img {
+		height: 30px;
+		margin-top: 0px;
+	}
+
+	.iconbox {
+		background: white;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		padding: 20px 5px;
+		margin: 0 auto 5px;
+		border-radius:25%;
+		max-width:300px;
+		height:150px;
+	}
+
+	.iconbox-gray {
+		background: lightgray;
+		border-bottom: 2px solid #d4d4d4;
+		text-align: center;
+		padding: 20px 5px;
+		margin: 0 auto 10px;
+		border-radius:25%;
+		max-width:300px;
+		height:180px;
+	}
+}
+
+@media (min-width: 200px) and (max-width: 479px) {
+	.iconbox {
+		max-width: 280px;
+	}
+	.iconbox-gray {
+		max-width:280px;
+		height:200px;
+	}
 }
 
 
@@ -950,7 +1082,7 @@ figure.effect-bubba:hover p {
 	position: absolute;
 	background: #FF5252;
 	height: 1px;
-	width: 0%;
+	width: 0;
 	top: 0;
 	z-index: 1000;
 }
@@ -993,24 +1125,4 @@ figure.effect-bubba:hover p {
 		width: 80px;
 	}
 
-}
-
-
-.fb-like {
-	position:relative;
-	top:8px;
-	padding-left:5px;
-}
-
-.panel-title {
-	text-transform: none;
-}
-.panel-body {
-	text-align: left;
-}
-.indicator {
-	margin-top: -15px;
-}
-.panel-heading a {
-	color: #2F7B4B;
 }

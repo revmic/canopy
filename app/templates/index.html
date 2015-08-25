@@ -61,15 +61,22 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
 						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
+						<div style="display:inline-block; position:relative; top:-1px">
+							<span>MENU </span>
+						</div>
+						<div style="display:inline-block">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</div>
 					</button>
 					<a class="navbar-brand" href="{{ url_for('index') }}">
 						<img src="../static/images/canopy-logo.png">
 						<!--<p id="catchphrase">Like a doctor in the family</p>-->
 					</a>
 				</div>
+
+				<div id="fb-like-mobile" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
 
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
@@ -79,7 +86,7 @@
                         <li data-toggle="collapse" data-target=".in"><a href="#faq">FAQ</a></li>
 						<li data-toggle="collapse" data-target=".in"><a href="#about">About Us</a></li>
 						<li data-toggle="collapse" data-target=".in"><a href="#careers">Careers</a></li>
-						<li><div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div></li>
+						<li><div id="fb-like-desktop" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
 					</ul>
 				</div>
 
@@ -101,15 +108,15 @@
 					<div class="box" style="margin-top:15px">
 
 						<div class="pfblock-subtitle text-center" style="color:black">
-							555.555.5555
+							<i class="fa fa-phone" style="position:relative; top:2px"></i> (971) 248-0172
 						</div>
 						<div class="pfblock-line" style="margin-top:5px; margin-bottom:5px;"></div>
 
-						<form id="contact-form" role="form" action="/api/email">
+						<form id="contact-form" role="form" action="/api/contact">
 							<div class="ajax-hidden">
 								<div class="form-group wow fadeInUp">
 									<label class="sr-only" for="c_name">Name</label>
-									<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name">
+									<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name" required="required">
 								</div>
 
 								<div class="form-group wow fadeInUp" data-wow-delay=".1s">
@@ -128,22 +135,22 @@
 								</div>
 
 								<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your family’s healthcare needs (optional)get"></textarea>
+									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your family’s healthcare needs (optional)"></textarea>
 								</div>
 
-								<button id="email" type="submit" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s">
-									<span id="email_spinner" style="color:white"></span> Request Info Now
+								<button id="email" type="submit" class="btn btn-lg btn-block wow fadeInUp text-left" data-wow-delay=".3s">
+									<span id="email_spinner" style="color:white" class="icon-paper-plane"></span> Request Info
 								</button>
 							</div>
 							<div class="ajax-response"></div>
 						</form>
+
 					</div><!-- .box -->
 				</div>
 
 			</div><!-- .row -->
 		</div><!-- .container -->
 
-		<br>
 		<br>
 
         <div class="container">
@@ -186,7 +193,7 @@
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Branding</h3>-->
 							<div class="pfblock-subtitle iconbox-desc">
-								Flat prices, no hidden charges <p class="small">($60/mo $120/visit)</p>
+								Flat prices, no hidden charges <p style="font-size: small">($60/mo $120/visit)</p>
 							</div>
 						</div>
 					</div>
@@ -215,22 +222,23 @@
 
 			<div class="row">
 
+				<h2 class="pfblock-title text-center">Our Mission</h2>
+				<div class="pfblock-line"></div>
+
 				<div class="col-sm-6">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/girl-teddy.jpg">
+						<img class="img-responsive" src="../static/images/girl-bear.jpg">
 						<!--<img class="img-responsive" src="http://placehold.it/800x600">-->
 					</div>
 				</div>
 
 				<div class="col-sm-6">
 					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">Our Mission</h2>
-						<div class="pfblock-line"></div>
 						<p class="text-left">
 							Canopy Care provides high-quality healthcare for your child that is accessible, affordable and convenient for <em>you</em>.
 						</p>
 						<p class="text-left">
-							With us, you have constant and frequent access to your personal, dedicated provider. We are always one call or text away, and we come to you whenever you need us.
+							With us, you have constant and frequent access to your dedicated pediatric nurse practitioner. We are always one call or text away, and we come to you whenever you need us.
 						</p>
 						<p class="text-left">
 							Your child’s health matters. So does your peace of mind. We take care of both.
@@ -275,14 +283,14 @@
 
 				<div class="col-sm-4">
 
-					<div class="iconbox wow fadeInRightBig" data-wow-delay=".1s" style="background-color:lightgray">
+					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay=".1s">
 						<div class="iconbox-icon">
-							<span class="icon-login small"></span> Sign Up
+							<span class="icon-login small"></span> Submit Request
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Web Design</h3>-->
 							<div class="iconbox-desc">
-								Sign up for a consultation with one of our pediatric nurse practitioners (PNPs). Decide if our service works for you.
+								Complete the contact form above for a free phone consultation. Decide if our service works for you.
 							</div>
 						</div>
 					</div>
@@ -291,15 +299,14 @@
 
 				<div class="col-sm-4">
 
-					<div class="iconbox wow fadeInRightBig" data-wow-delay=".6s" style="background-color:lightgray">
+					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay=".6s">
 						<div class="iconbox-icon">
 							<span class="icon-check small"></span> Subscribe
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Web Programming</h3>-->
 							<div class="iconbox-desc">
-								We offer six- and twelve-month subscriptions at affordable rates. See our prices
-								<a href="javascript:" onclick="show_pricing();">here</a>.
+								See our detailed policy <a href="javascript:" onclick="show_pricing();">here</a>.
 							</div>
 						</div>
 					</div>
@@ -308,14 +315,14 @@
 
 				<div class="col-sm-4">
 
-					<div class="iconbox wow fadeInRightBig" data-wow-delay="1.1s" style="background-color:lightgray">
+					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay="1.1s">
 						<div class="iconbox-icon">
 							<span class="icon-emoticon-smile small"></span> Enjoy
 						</div>
 						<div class="iconbox-text">
 							<!--<h3 class="iconbox-title">Branding</h3>-->
 							<div class="iconbox-desc">
-								Enjoy direct access to your PNP as well as our support staff at Canopy. For face-to-face visits, your PNP will come to you for a flat fee.
+								Enjoy direct access to your provider as well as our support staff at Canopy. For face-to-face visits, we will come to you for a flat fee.
 							</div>
 						</div>
 					</div>
@@ -388,7 +395,7 @@
 								</div>
 								<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
 								  <div class="panel-body">
-									No, we are not an insurance provider. Our PNPs are trained to consult, diagnose, and treat to the best of their ability, and in accordance with our Best Practices. This does not constitute insurance in the event of an emergency or other acute illnesses. In such cases, our PNPs will be quick to advise patients to seek emergency services through their PCP, urgent care, or ERs.
+									No, we are not an insurance provider. Our PNPs are trained to consult, diagnose, and treat to the best of their ability, and in accordance with our Best Practices. This does not constitute insurance in the event of an emergency or other acute illnesses. In such cases, our PNPs will be quick to advise patients to seek emergency services.
 								  </div>
 								</div>
 							  </div>
@@ -487,7 +494,7 @@
 						<h2 class="pfblock-title">About Us</h2>
 						<div class="pfblock-line"></div>
 						<p class="text-left">
-							Canopy Care is a small business founded by an experienced PNP and a few associates. We were unsatisfied with the lack of access and convenience that parents had for medical services. Protecting a child’s health is a 24/7 operation. Canopy strives to be a trusted partner in that task based on three core tenets:
+							Canopy Care is a small business founded by an experienced Pediatric Nurse Practitioner and a few associates. We were unsatisfied with the lack of access and convenience that parents had for medical services. Protecting a child’s health is a 24/7 operation. Canopy strives to be a trusted partner in that task based on three core tenets:
 						</p>
 					</div>
 
@@ -498,22 +505,22 @@
 			<div class="row">
 				<div class="col-sm-2">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/baby-father-hand.jpg">
+						<img class="img-responsive" src="../static/images/hands.jpg" style="margin: 0 auto;">
 					</div>
 				</div>
 				<div class="col-sm-10">
-					<p>It’s <strong>personal</strong>: unlike conglomerate insurance companies and hospital networks, you work with a dedicated PNP that knows your child and your family.  Your child’s medical history is securely documented, and always available to you.</p>
+					<p><strong>Personal</strong>: unlike conglomerate insurance companies and hospital networks, you work with a dedicated provider that knows your child and your family.  Your child’s medical history is securely documented, and always available to you.</p>
 				</div>
 			</div>
 			<br>
 			<div class="row">
 				<div class="col-sm-2">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/health-tech.jpg">
+						<img class="img-responsive" src="../static/images/health-tech.jpg" style="margin: 0 auto;">
 					</div>
 				</div>
 				<div class="col-sm-10">
-					<p>It's <strong>accessible</strong>: your PNP is always a message or call away, and when visits are needed we come to you or where your child is. No hassle, no stress.</p>
+					<p><strong>Accessible</strong>: your practitioner is always a message or call away, and when visits are needed we come to you or where your child is. No hassle, no stress.</p>
 				</div>
 			</div>
 			<br>
@@ -521,11 +528,11 @@
 				<div class="col-sm-2">
 					<div class="wow slideInRight">
 						<!--<img class="img-responsive" src="http://placehold.it/100x100">-->
-						<img class="img-responsive" src="../static/images/bridge-rainforest.jpg">
+						<img class="img-responsive" src="../static/images/bridge.jpg" style="margin: 0 auto;">
 					</div>
 				</div>
 				<div class="col-sm-10">
-					<p>It's focused on the <strong>long-term</strong>: we help you achieve wellness for your child through preventative medicine, consultation, and guidance. We aim to be a trusted partner in your child's long-run development.</p>
+					<p><strong>Long-term</strong>: we help you achieve wellness for your child through preventative medicine, consultation, and guidance. We aim to be a trusted partner in your child's long-run development.</p>
 				</div>
 			</div>
 					
@@ -544,7 +551,7 @@
 				<div class="col-sm-12">
 
 					<div class="pfblock-header">
-						<h2 class="pfblock-title">Careers @ Canopy Care</h2>
+						<h2 class="pfblock-title">Careers At Canopy</h2>
 						<div class="pfblock-line"></div>
 					</div>
 
@@ -557,7 +564,7 @@
 				<div class="col-sm-4">
 					<div class="wow slideInLeft">
 						<!--<img class="img-responsive" src="http://placehold.it/400x400">-->
-						<img class="img-responsive" src="../static/images/multiethnic-medical-team.jpg">
+						<img class="img-responsive" src="../static/images/medical-team.jpg">
 					</div>
 				</div>
 
@@ -571,13 +578,13 @@
 						<li>Take ownership in their patients’ overall health and wellness.</li>
 					</ul>
 					<p>
-						The business succeeds by making our customers happy, not through insurance reimbursements, and we welcome our PNPs who share that same vision.
+						We succeed when our patients are happy and healthy, not through insurance reimbursements, and we welcome all PNPs who share that same vision.
 					</p>
+					<!--<p>-->
+						<!--Are you a soon-to-be PNP? Canopy welcomes interns as well! Interns help with the consultation process, medical records management, and get exposure to our network of PNPs and health professionals. It is a great way for aspiring practitioners to get exposed to modern, transformational pediatric care.-->
+					<!--</p>-->
 					<p>
-						Are you a soon-to-be PNP? Canopy welcomes interns as well! Interns help with the consultation process, medical records management, and get exposure to our network of PNPs and health professionals. It is a great way for aspiring practitioners to get exposed to modern, transformational pediatric care.
-					</p>
-					<p>
-						If interested, please send a resume and cover letter to careers@canopy.care or use our upload service.
+						If interested, please send a resume and cover letter to <a href="mailto:careers@canopy.care?Subject=[CanopyCare]%20Careers" target="_top">careers@canopy.care</a> or upload here.
 					</p>
 
 					<button id="toggle-dropzone-btn" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s" onclick="toggle_dropzone()" style="margin-bottom: 10px">

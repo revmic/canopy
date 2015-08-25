@@ -44,61 +44,35 @@
 			target: '.navbar-custom',
 			offset: 0
 		});
-
-        
-        /* ---------------------------------------------- /*
-		 * Skills
-        /* ---------------------------------------------- */    
-        //var color = $('#home').css('backgroundColor');
-
-        //$('.skills').waypoint(function(){
-        //    $('.chart').each(function(){
-        //    $(this).easyPieChart({
-        //            size:140,
-        //            animate: 2000,
-        //            lineCap:'butt',
-        //            scaleColor: false,
-        //            barColor: '#FF5252',
-        //            trackColor: 'transparent',
-        //            lineWidth: 10
-        //        });
-        //    });
-        //},{offset:'80%'});
-        
-        
-        /* ---------------------------------------------- /*
-		 * Quote Rotator
-		/* ---------------------------------------------- */
-       
-			/*$( function() {
-
-				- how to call the plugin:
-				$( selector ).cbpQTRotator( [options] );
-				- options:
-				{
-					// default transition speed (ms)
-					speed : 700,
-					// default transition easing
-					easing : 'ease',
-					// rotator interval (ms)
-					interval : 8000
-				}
-				- destroy:
-				$( selector ).cbpQTRotator( 'destroy' );
-
-				$( '#cbp-qtrotator' ).cbpQTRotator();
-
-			} );*/
 		
         
 		/* ---------------------------------------------- /*
 		 * Home BG
 		/* ---------------------------------------------- */
 
-		$(".screen-height").height($(window).height());
+		toggle_facebook_like();
 
-		$(window).resize(function(){
-			$(".screen-height").height($(window).height());
+		var screen = $(".screen-height");
+		screen.height();
+		//alert($(window).width());
+
+		if (screen.height() < 1000 && $(window).width() <= 768) {
+			screen.height(1000);
+		}
+
+		if ($(window).width() < 450) {
+			screen.height(3 * $(window).width())
+		}
+
+		$(window).resize(function() {
+			toggle_facebook_like();
+
+			if (screen.height() < 1000) {
+				screen.height($(window).height());
+			}
+			if ($(window).width() < 450) {
+				screen.height(3 * $(window).width())
+			}
 		});
 
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
@@ -109,7 +83,7 @@
 
 
 		/* ---------------------------------------------- /*
-		 * WOW Animation When You Scroll
+		 * WOW Animation
 		/* ---------------------------------------------- */
 
 		wow = new WOW({
@@ -125,11 +99,16 @@
 		function isValidEmailAddress(emailAddress) {
 			var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
 			return pattern.test(emailAddress);
-		};
+		}
 
 		/* ---------------------------------------------- /*
 		 * Contact form ajax
 		/* ---------------------------------------------- */
+
+		// Turn off the bubbles
+		//form.addEventListener( "invalid", function( event ) {
+		//	event.preventDefault();
+		//}, true );
 
 		$('#contact-form').submit(function(e) {
 
@@ -151,20 +130,36 @@
 				'message'    : c_message
 			};
 
-			if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
-				(!isValidEmailAddress(c_email) )) {
+			//if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
+			//	(!isValidEmailAddress(c_email) )) {
 
+			var validation_error = undefined;
+
+			if (c_name == '') {
+				validation_error = 'Your name is required.'
+			} else if (c_email == '') {
+				validation_error = 'An email is required.';
+			} else if (c_phone == '') {
+				validation_error = 'Your phone is required.';
+			} else if (c_zip == '') {
+				validation_error = 'Your zip is required.';
+			} else if ( !isValidEmailAddress(c_email) ) {
+				validation_error = 'Please check email address.';
+			}
+			//alert(validation_error);
+
+			if (validation_error) {
 				ajax_response.fadeIn(500);
 				ajax_response.html(
-					'<i class="fa fa-warning"></i> ' +
-					'All fields except message are required. Please try again.'
+					'<i class="fa fa-warning"></i> ' + validation_error
 				).css("color", "#E7746F");
 			} else {
+				email_spinner.removeClass("icon-paper-plane");
 				email_spinner.addClass("fa fa-cog fa-spin");
 
 				$.ajax({
 					type: 'POST',
-					url: '/api/email',
+					url: '/api/contact',
 					//data: $('form').serialize(),
 					data: formData,
 					dataType: 'json',
@@ -174,12 +169,12 @@
 
 						ajax_response.fadeIn(500);
 						ajax_response.html(
-							'<span class="icon-paper-plane"></span> ' +
 							'Your message was sent successfully. We will get back to you shortly.'
 						).css("color", "green");
 
 						email_spinner.removeClass("fa fa-cog fa-spin");
 						email_spinner.addClass("fa fa-check-circle-o");
+						$("#email").prop("disabled",true);
 
 					},
 					error: function(error) {
@@ -210,9 +205,65 @@ function toggle_dropzone() {
 	$("#dropzone-area").toggle(500);
 }
 
+function toggle_facebook_like() {
+	// Show appropriate FB Like button
+	if ($(window).width() < 768) {
+		$('#fb-like-desktop').hide();
+		$('#fb-like-mobile').show();
+	} else {
+		$('#fb-like-mobile').hide();
+		$('#fb-like-desktop').show();
+	}
+}
+
 function show_pricing() {
 	$('html, body').animate({
-		scrollTop: $("#faq").offset().top
+		scrollTop: $("#accordion").offset().top
 	}, 750);
 	$('#collapse0').collapse('show');
 }
+
+
+/* ---------------------------------------------- /*
+ * Skills
+/* ---------------------------------------------- */
+//var color = $('#home').css('backgroundColor');
+
+//$('.skills').waypoint(function(){
+//    $('.chart').each(function(){
+//    $(this).easyPieChart({
+//            size:140,
+//            animate: 2000,
+//            lineCap:'butt',
+//            scaleColor: false,
+//            barColor: '#FF5252',
+//            trackColor: 'transparent',
+//            lineWidth: 10
+//        });
+//    });
+//},{offset:'80%'});
+
+
+/* ---------------------------------------------- /*
+ * Quote Rotator
+/* ---------------------------------------------- */
+
+	/*$( function() {
+
+		- how to call the plugin:
+		$( selector ).cbpQTRotator( [options] );
+		- options:
+		{
+			// default transition speed (ms)
+			speed : 700,
+			// default transition easing
+			easing : 'ease',
+			// rotator interval (ms)
+			interval : 8000
+		}
+		- destroy:
+		$( selector ).cbpQTRotator( 'destroy' );
+
+		$( '#cbp-qtrotator' ).cbpQTRotator();
+
+	} );*/
