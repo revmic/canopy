@@ -61,9 +61,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#custom-collapse">
 						<span class="sr-only">Toggle navigation</span>
-						<div style="display:inline-block; position:relative; top:-1px">
-							<span>MENU </span>
-						</div>
+						<div id="menu-text">MENU</div>
 						<div style="display:inline-block">
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
@@ -76,8 +74,6 @@
 					</a>
 				</div>
 
-				<div id="fb-like-mobile" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
 						<li data-toggle="collapse" data-target=".in"><a href="#home">Home</a></li>
@@ -86,7 +82,7 @@
                         <li data-toggle="collapse" data-target=".in"><a href="#faq">FAQ</a></li>
 						<li data-toggle="collapse" data-target=".in"><a href="#about">About Us</a></li>
 						<li data-toggle="collapse" data-target=".in"><a href="#careers">Careers</a></li>
-						<li><div id="fb-like-desktop" class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
+						<li><div id="fb-like-desktop" class="fb-like" data-href="https://www.facebook.com/CanopyCares/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
 					</ul>
 				</div>
 
@@ -106,17 +102,18 @@
 				<div class="col-sm-4 col-sm-offset-8">
 
 					<div class="box" style="margin-top:15px">
+							<div class="pfblock-subtitle text-center" style="color:black">
+								<i class="fa fa-phone" style="position:relative; top:2px"></i> (971) 248-0172
+							</div>
+							<div id="fb-like-mobile" class="fb-like pull-right" data-href="https://www.facebook.com/CanopyCares/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
 
-						<div class="pfblock-subtitle text-center" style="color:black">
-							<i class="fa fa-phone" style="position:relative; top:2px"></i> (971) 248-0172
-						</div>
 						<div class="pfblock-line" style="margin-top:5px; margin-bottom:5px;"></div>
 
 						<form id="contact-form" role="form" action="/api/contact">
 							<div class="ajax-hidden">
 								<div class="form-group wow fadeInUp">
 									<label class="sr-only" for="c_name">Name</label>
-									<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name" required="required">
+									<input type="text" id="c_name" class="form-control" name="c_name" placeholder="Full Name">
 								</div>
 
 								<div class="form-group wow fadeInUp" data-wow-delay=".1s">
@@ -143,6 +140,7 @@
 								</button>
 							</div>
 							<div class="ajax-response"></div>
+							<input type="submit" style="visibility:hidden" />
 						</form>
 
 					</div><!-- .box -->
@@ -624,7 +622,7 @@
                         <!--Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham-->
                     <!--</p>-->
                     <p class="copyright">
-                        © 2015 Canopy Care. All Rights Reserved | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a>
+                        © 2015 Canopy Care. All Rights Reserved <!-- | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> -->
 					</p>
 
 				</div>

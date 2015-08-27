@@ -13,11 +13,12 @@ img {
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
 	border-radius: 4px;
-	/*height: auto;*/
+	height: auto;
 }
 
 a {
 	color: #E7746F;
+	/*color: #BA4665;*/
 }
 
 a:hover {
@@ -195,7 +196,8 @@ textarea.form-control {
 	padding: 10px 25px;
 	font-size: 13px;
     /*background: rgba(17, 17, 17, 0.8);*/
-	background: #2F7B4B;
+    background: #2F7B4B;
+	/*background: #97BB5C;*/
     color: #fff;
 }
 .btn-lg:hover,
@@ -349,9 +351,9 @@ textarea.form-control {
 }
 
 #fb-like-mobile {
-	position: absolute;
-	top: 14px;
-	right: 100px;
+	position: relative;
+	top: -30px;
+	/*right: 100px;*/
 }
 /*.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {*/
    /*display: none !important;*/
@@ -378,7 +380,7 @@ textarea.form-control {
 #home {
 	/*background: url("https://placehold.it/1200x750");*/
 	/*background: url("../images/background.jpg");*/
-	background: white url("../images/children-bubbles.jpg") no-repeat 50% 50% scroll;
+	background: white url("../images/children-bubbles.jpg") no-repeat 50% 50%;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
@@ -511,6 +513,10 @@ textarea.form-control {
 	text-align: center;
 }
 
+.input-error {
+	background-color: #fffdcb;
+}
+
 /* ---------------------------------------------- /*
  * Footer
 /* ---------------------------------------------- */
@@ -584,6 +590,7 @@ textarea.form-control {
 	text-transform: uppercase;
 	font-family: Raleway, sans-serif;
 	font-weight: bold;
+	margin-bottom: -2px;
 }
 
 .navbar-custom,
@@ -639,6 +646,14 @@ textarea.form-control {
 
 .navbar-custom .navbar-toggle .icon-bar {
 	background: #222;
+}
+
+#menu-text {
+	display:inline-block;
+	position:relative;
+	top:-3px;
+	font-size: xx-small;
+	letter-spacing: -1px;
 }
 
 /* ---------------------------------------------- /*
@@ -854,13 +869,17 @@ textarea.form-control {
 	}
 }
 
-@media (min-width: 200px) and (max-width: 479px) {
+@media (min-width: 1px) and (max-width: 479px) {
 	.iconbox {
 		max-width: 280px;
 	}
 	.iconbox-gray {
 		max-width:280px;
 		height:200px;
+	}
+	.navbar-custom .navbar-brand img {
+		height: 20px;
+		margin-top: 5px;
 	}
 }
 

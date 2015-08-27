@@ -79,6 +79,8 @@
 			$('#home').css({'background-attachment': 'scroll'});
 		} else {
 			$('#home').parallax('50%', 0.1);
+			// Focus cursor on contact form
+			$("input:text:visible:first").focus();
 		}
 
 
@@ -113,12 +115,18 @@
 		$('#contact-form').submit(function(e) {
 
 			e.preventDefault();
+			
+			var name_field = $('#c_name');
+			var email_field = $('#c_email');
+			var phone_field =$('#c_phone');
+			var zip_field =$('#c_zip');
+			
 
 			var email_spinner = $('#email_spinner');
-			var c_name = $('#c_name').val();
-			var c_email = $('#c_email').val();
-			var c_phone = $('#c_phone').val();
-			var c_zip = $('#c_zip').val();
+			var c_name = name_field.val();
+			var c_email = email_field.val();
+			var c_phone = phone_field.val();
+			var c_zip = zip_field.val();
 			var c_message = $('#c_message ').val();
 			var ajax_response = $('#contact-form').find('.ajax-response');
 			
@@ -130,22 +138,38 @@
 				'message'    : c_message
 			};
 
-			//if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
-			//	(!isValidEmailAddress(c_email) )) {
-
 			var validation_error = undefined;
 
-			if (c_name == '') {
-				validation_error = 'Your name is required.'
-			} else if (c_email == '') {
-				validation_error = 'An email is required.';
-			} else if (c_phone == '') {
-				validation_error = 'Your phone is required.';
-			} else if (c_zip == '') {
-				validation_error = 'Your zip is required.';
-			} else if ( !isValidEmailAddress(c_email) ) {
-				validation_error = 'Please check email address.';
+			if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
+				(!isValidEmailAddress(c_email) )) {
+				validation_error = "Please fill out required fields."
 			}
+
+			if (c_zip == '') {
+				zip_field.addClass('input-error');
+				zip_field.focus();
+			} else {
+				zip_field.removeClass('input-error');
+			}
+			if (c_phone == '') {
+				phone_field.addClass('input-error');
+				phone_field.focus();
+			} else {
+				phone_field.removeClass('input-error');
+			}
+			if (c_email == '' || !isValidEmailAddress(c_email)) {
+				email_field.addClass('input-error');
+				email_field.focus();
+			} else {
+				email_field.removeClass('input-error');
+			}
+			if (c_name == '') {
+				name_field.addClass('input-error');
+				name_field.focus();
+			} else {
+				name_field.removeClass('input-error');
+			}
+
 			//alert(validation_error);
 
 			if (validation_error) {

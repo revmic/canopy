@@ -30,12 +30,11 @@ def make_shell_context():
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
-app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'mhilema@yahoo.com',
-                                 'rachel@canopy.care', 'neal@canopy.care',
-                                 'rchlmnd006@gmail.com']
-# app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care']
+# app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care',
+#                                   'neal@canopy.care']
+app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com']
 app.config['MAIL_SUBJECT_PREFIX'] = '[CanopyCare]'
-app.config['MAIL_SENDER'] = 'CanopyCare Admin <admin@canopycare.com>'
+app.config['MAIL_SENDER'] = 'CanopyCare Support <support@canopy.care>'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 
 
@@ -87,7 +86,6 @@ def upload():
     f.save(os.path.join(upload_dir, f.filename))
     file_size = os.path.getsize(os.path.join(upload_dir, f.filename))
 
-    # TODO email file
     form = ContactForm(
         message="See attached resume."
     )
