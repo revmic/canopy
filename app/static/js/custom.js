@@ -118,11 +118,9 @@
 			
 			var name_field = $('#c_name');
 			var email_field = $('#c_email');
-			var phone_field =$('#c_phone');
-			var zip_field =$('#c_zip');
-			
+			var phone_field = $('#c_phone');
+			var zip_field = $('#c_zip');
 
-			var email_spinner = $('#email_spinner');
 			var c_name = name_field.val();
 			var c_email = email_field.val();
 			var c_phone = phone_field.val();
@@ -131,20 +129,14 @@
 			var ajax_response = $('#contact-form').find('.ajax-response');
 			
 			var formData = {
-				'name'       : c_name,
-				'email'      : c_email,
-				'phone' 	 : c_phone,
-				'zip'		 : c_zip,
-				'message'    : c_message
+				'name' : c_name,
+				'email' : c_email,
+				'phone' : c_phone,
+				'zip' : c_zip,
+				'message' : c_message
 			};
 
-			var validation_error = undefined;
-
-			if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '') ||
-				(!isValidEmailAddress(c_email) )) {
-				validation_error = "Please fill out required fields."
-			}
-
+			// UI alerts for incorrect form data
 			if (c_zip == '') {
 				zip_field.addClass('input-error');
 				zip_field.focus();
@@ -170,7 +162,15 @@
 				name_field.removeClass('input-error');
 			}
 
-			//alert(validation_error);
+			// Message to display for incorrect input
+			var validation_error = undefined;
+
+			if (!isValidEmailAddress(c_email)) {
+				validation_error = "Please check email address."
+			}
+			if (( c_name== '' || c_email == '' || c_phone == '' || c_zip == '')) {
+				validation_error = "Please fill out required fields."
+			}
 
 			if (validation_error) {
 				ajax_response.fadeIn(500);
@@ -178,6 +178,7 @@
 					'<i class="fa fa-warning"></i> ' + validation_error
 				).css("color", "#E7746F");
 			} else {
+				var email_spinner = $('#email_spinner');
 				email_spinner.removeClass("icon-paper-plane");
 				email_spinner.addClass("fa fa-cog fa-spin");
 
@@ -190,6 +191,7 @@
 					encode: true,
 					success: function(res) {
 						console.log(res);
+						goog_report_conversion();
 
 						ajax_response.fadeIn(500);
 						ajax_response.html(
@@ -203,7 +205,11 @@
 					},
 					error: function(error) {
 						console.log(error);
+						ajax_response.html(
+							"Failed to send message. Server error (" + error.status + "). Please call (917) 248-0172 or email us at support@canopy.care"
+						).css("color", "red");
 						email_spinner.removeClass("fa fa-cog fa-spin");
+						email_spinner.addClass("fa fa-times");
 					}
 				});
 			}

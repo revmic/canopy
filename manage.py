@@ -30,9 +30,12 @@ def make_shell_context():
 
 manager.add_command("shell", Shell(make_context=make_shell_context))
 
-# app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com', 'rachel@canopy.care',
-#                                   'neal@canopy.care']
-app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com']
+if get_env() == 'prod':
+    app.config['MAIL_RECIPIENTS'] = \
+        ['mhilema@gmail.com', 'rachel@canopy.care',
+         'neal@canopy.care', 'sergi@canopy.care']
+else:
+    app.config['MAIL_RECIPIENTS'] = ['mhilema@gmail.com']
 app.config['MAIL_SUBJECT_PREFIX'] = '[CanopyCare]'
 app.config['MAIL_SENDER'] = 'CanopyCare Support <support@canopy.care>'
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
@@ -64,8 +67,11 @@ def contact():
 
     try:
         mail.send(msg)
-    except Exception:
-        return jsonify(status='FAIL')
+    except Exception as e:
+        print("EXCEPTION:", e)
+        response = jsonify(code=e.args[0], message=str(e.args[1]))
+        response.status_code = e.args[0]
+        return response
 
     return jsonify(status='OK', name=request.form['message'])
 
