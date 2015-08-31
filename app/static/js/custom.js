@@ -108,13 +108,14 @@
 		/* ---------------------------------------------- */
 
 		// Turn off the bubbles
-		//form.addEventListener( "invalid", function( event ) {
-		//	event.preventDefault();
-		//}, true );
+		window.addEventListener( "invalid", function( event ) {
+			event.preventDefault();
+		}, true );
 
 		$('#contact-form').submit(function(e) {
 
 			e.preventDefault();
+			ga('send', 'event', 'request', 'click');
 			
 			var name_field = $('#c_name');
 			var email_field = $('#c_email');

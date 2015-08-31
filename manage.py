@@ -1,6 +1,6 @@
 import os
 
-from flask import render_template, request, jsonify
+from flask import render_template, request, jsonify, send_from_directory
 from flask.ext.script import Manager, Shell
 from flask.ext.mail import Message
 
@@ -112,6 +112,11 @@ def upload():
         return jsonify(status='FAIL')
 
     return jsonify(status='OK', name=f.filename, size=file_size)
+
+
+@app.route('/sitemap.xml')
+def static_from_root():
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 if __name__ == '__main__':

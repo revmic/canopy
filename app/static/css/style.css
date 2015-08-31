@@ -881,6 +881,9 @@ textarea.form-control {
 		height: 20px;
 		margin-top: 5px;
 	}
+	#accordion {
+		width: 95%;
+	}
 }
 
 
