@@ -430,7 +430,25 @@ textarea.form-control {
     /*margin-bottom: 5px;*/
     padding: 15px;
     background: #fff;
-    background: rgba(255,255,255,0.95);
+	opacity: 90;
+    background: rgba(255,255,255,0.90);
+    border-radius: 2px;
+}
+
+#tagline {
+	font-family: "Raleway", "Times New Roman", Times, sans-serif;
+	font-style: italic;
+	margin-top: 20px;
+	font-size: 18px;
+	font-weight: 400;
+	letter-spacing: .05em;
+}
+
+.tagline-box {
+	padding: 0;
+    background: #2F7B4B;
+	opacity: 30;
+    background: rgba(47,123,75,0.30);
     border-radius: 2px;
 }
 
@@ -867,6 +885,9 @@ textarea.form-control {
 		max-width:300px;
 		height:180px;
 	}
+	/*#tagline {*/
+		/*font-size: 95%;*/
+	/*}*/
 }
 
 @media (min-width: 1px) and (max-width: 479px) {
@@ -884,6 +905,10 @@ textarea.form-control {
 	#accordion {
 		width: 95%;
 	}
+	/*#tagline {*/
+		/*font-weight: 600;*/
+		/*font-size: 95%;*/
+	/*}*/
 }
 
 
