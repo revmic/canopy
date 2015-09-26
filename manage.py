@@ -44,6 +44,7 @@ app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 # TODO get views figured out w/ or w/o blueprints, can't go here
 @app.route('/', methods=['GET'])
 @app.route('/index', methods=['GET'])
+@app.route('/seattle', methods=['GET'])
 def index():
     return render_template("index.html", title='Canopy Care')
 

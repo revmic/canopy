@@ -84,7 +84,6 @@
 	</script>
 
 	<!-- Navigation start -->
-
 	<header class="header">
 		<nav class="navbar navbar-custom" role="navigation">
 			<div class="container">
@@ -99,19 +98,19 @@
 							<span class="icon-bar"></span>
 						</div>
 					</button>
-					<a class="navbar-brand" href="{{ url_for('index') }}">
+					<a class="navbar-brand" href="#home">
 						<img src="../static/images/canopy-logo.png">
-						<!--<p id="catchphrase">Like a doctor in the family</p>-->
 					</a>
 				</div>
 
+				<div id="fb-like-mobile" class="fb-like" data-href="https://www.facebook.com/CanopyCares/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+
 				<div class="collapse navbar-collapse" id="custom-collapse">
 					<ul class="nav navbar-nav navbar-right">
-						<li data-toggle="collapse" data-target=".in"><a href="#home">Home</a></li>
-						<li data-toggle="collapse" data-target=".in"><a href="#mission">Mission</a></li>
+						<!--<li data-toggle="collapse" data-target=".in"><a href="#home">Home</a></li>-->
                         <li data-toggle="collapse" data-target=".in"><a href="#works">How it Works</a></li>
-                        <li data-toggle="collapse" data-target=".in"><a href="#faq">FAQ</a></li>
-						<li data-toggle="collapse" data-target=".in"><a href="#about">About Us</a></li>
+                        <li data-toggle="collapse" data-target=".in"><a href="#team">Team</a></li>
+						<li data-toggle="collapse" data-target=".in"><a href="#mission">Mission</a></li>
 						<li data-toggle="collapse" data-target=".in"><a href="#careers">Careers</a></li>
 						<li><div id="fb-like-desktop" class="fb-like" data-href="https://www.facebook.com/CanopyCares/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div></li>
 					</ul>
@@ -120,28 +119,63 @@
 			</div><!-- .container -->
 		</nav>
 	</header>
-
 	<!-- Navigation end -->
 
 	<!-- Home start -->
-
 	<section id="home" class="pfblock-image screen-height">
 		<div class="container">
 
 			<div class="row">
-				<div class="col-sm-8">
-					<div class="tagline-box wow fadeInLeft" style="opacity:50">
-						<p id="tagline">A premium on-demand healthcare service for kids</p>
+
+				<div class="col-sm-12">
+					<div class="box faded text-center" style="opacity:50; padding: 0">
+						<p id="tagline"><em>Personalized & On-Demand</em> health care service for kids in Seattle, WA</p>
+					</div>
+				</div>
+
+				<div class="col-sm-4 col-sm-offset-4">
+					<div class="box faded" style="color:black; ">
+						<div class="row">
+							<div class="col-xs-2 text-center">
+								<i class="fa fa-2x fa-clock-o" style="line-height: inherit;"></i>
+							</div>
+							<div class="col-xs-10">
+								<p>Round the clock care from your personal providers, including nights and weekends.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2 text-center">
+								<i class="fa fa-2x fa-mobile" style="line-height: inherit;"></i>
+							</div>
+							<div class="col-xs-10">
+								<p>Unlimited access - via phone, text, e-mail, video - for consultation, diagnoses, and treatment.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2 text-center">
+								<i class="fa fa-2x fa-user-md" style="line-height: inherit;"></i>
+							</div>
+							<div class="col-xs-10">
+								<p>Experience, board-certified providers local to the Seattle area. See the <a href="#team">team</a>.</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-xs-2 text-center">
+								<i class="fa fa-2x fa-money" style="line-height: inherit;"></i>
+							</div>
+							<div class="col-xs-10">
+								<p>Simple, transparent pricing &#45;&#45; no hidden charges ever!</p>
+							</div>
+						</div>
 					</div>
 				</div>
 
 				<div class="col-sm-4">
 
-					<div class="box" style="margin-top:15px">
-							<div class="pfblock-subtitle text-center" style="color:black">
-								<i class="fa fa-phone" style="position:relative; top:2px"></i> (971) 248-0172
-							</div>
-							<div id="fb-like-mobile" class="fb-like pull-right" data-href="https://www.facebook.com/CanopyCares/" data-width="45" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+					<div class="box" >
+						<div class="pfblock-subtitle text-center" style="color:black">
+							Get CanopyCare Now
+						</div>
 
 						<div class="pfblock-line" style="margin-top:5px; margin-bottom:5px;"></div>
 
@@ -168,8 +202,12 @@
 								</div>
 
 								<div class="form-group wow fadeInUp" data-wow-delay=".2s">
-									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your family’s healthcare needs (optional)"></textarea>
+									<textarea class="form-control" id="c_message" name="c_message" rows="3" placeholder="Tell us about your family!"></textarea>
 								</div>
+
+								<!--<div class="pfblock-subtitle" style="color:black">-->
+									<p style="color:black">Give us a call at (971) 248-0172. We are open 7 days a week!</p>
+								<!--</div>-->
 
 								<button id="email" type="submit" class="btn btn-lg btn-block wow fadeInUp text-left" data-wow-delay=".3s">
 									<span id="email_spinner" style="color:white" class="icon-paper-plane"></span> Request Info
@@ -185,99 +223,246 @@
 			</div><!-- .row -->
 		</div><!-- .container -->
 
-		<br>
+		<!--<div class="container content">-->
+			<!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">-->
+				<!--&lt;!&ndash; Indicators &ndash;&gt;-->
+				<!--<ol class="carousel-indicators">-->
+					<!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
+					<!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+					<!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+				<!--</ol> &lt;!&ndash; Wrapper for slides &ndash;&gt; <div class="carousel-inner">-->
+				<!--<div class="item active">-->
+					<!--<div class="row">-->
+						<!--<div class="col-xs-12">-->
+							<!--<div class="thumbnail adjust1">-->
+								<!--&lt;!&ndash;<div class="col-md-2 col-sm-2 col-xs-12">&ndash;&gt;-->
+									<!--&lt;!&ndash;<img class="media-object img-rounded img-responsive" src="http://placehold.it/100">&ndash;&gt;-->
+								<!--&lt;!&ndash;</div>&ndash;&gt;-->
+								<!--&lt;!&ndash;<div class="col-md-10 col-sm-10 col-xs-12">&ndash;&gt;-->
+								<!--<div class="col-sm-11 col-sm-offset-1">-->
+									<!--<div class="caption">-->
+										<!--<p class="text-info lead adjust2">I can't wait to test this out.</p>-->
+										<!--&lt;!&ndash;<p><span class="glyphicon glyphicon-thumbs-up"></span> This is a testimonial window. Feedback of user can be displayed here.</p>&ndash;&gt;-->
+										<!--<blockquote class="adjust2">-->
+											<!--<p>Abhijit Goswami</p>-->
+											<!--&lt;!&ndash;<small><cite title="Source Title"><i class="glyphicon glyphicon-globe"></i> www.example1.com</cite></small>&ndash;&gt;-->
+										<!--</blockquote>-->
+									<!--</div>-->
+								<!--</div>-->
+							<!--</div>-->
+						<!--</div>-->
+					<!--</div>-->
+				<!--</div>-->
+			<!--</div> &lt;!&ndash; ./container &ndash;&gt;-->
 
-        <div class="container">
-
-			<div class="row">
-
-				<div class="col-sm-4">
-					<div class="iconbox wow slideInLeft">
-						<div class="iconbox-icon">
-							<span class="icon-clock"></span>
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Web Design</h3>-->
-							<div class="pfblock-subtitle iconbox-desc">
-								Instant access to your provider
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="iconbox wow slideInUp">
-						<div class="iconbox-icon">
-							<span class="icon-home"></span>
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Web Programming</h3>-->
-							<div class="pfblock-subtitle iconbox-desc">
-								In-home visits
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="col-sm-4">
-					<div class="iconbox wow slideInRight">
-						<div class="iconbox-icon">
-							<span class="fa fa-money"></span>
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Branding</h3>-->
-							<div class="pfblock-subtitle iconbox-desc">
-								Flat prices, no hidden charges <p style="font-size: small">($60/mo $120/visit)</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
-
-        <!--<a href="#mission">-->
-			<!--<div class="scroll-down">-->
-				<!--<span>-->
-					<!--<i class="fa fa-angle-down fa-2x"></i>-->
-				<!--</span>-->
+				<!--&lt;!&ndash; Controls &ndash;&gt;-->
+				<!--<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">-->
+					<!--<span class="fa fa-chevron-left"></span>-->
+				<!--</a>-->
+				<!--<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">-->
+					<!--<span class="fa fa-chevron-right"></span>-->
+				<!--</a>-->
 			<!--</div>-->
-        <!--</a>-->
+		<!--</div>-->
+
+		<!--<br>-->
 
 	</section>
-
 	<!-- Home end -->
 
-
-    <!-- Mission start -->
-
-	<section id="mission" class="pfblock pfblock-gray">
+    <!-- How It Works start -->
+	<section id="works" class="pfblock pfblock-white">
 		<div class="container">
 
 			<div class="row">
 
-				<h2 class="pfblock-title text-center">Our Mission</h2>
+				<h2 class="pfblock-title text-center">How Does It Work?</h2>
 				<div class="pfblock-line"></div>
 
 				<div class="col-sm-6">
 					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/girl-bear.jpg">
-						<!--<img class="img-responsive" src="http://placehold.it/800x600">-->
+						<!--<img class="img-responsive" src="../static/images/girl-bear.jpg">-->
+						<img class="img-responsive" src="http://placehold.it/800x600">
 					</div>
 				</div>
 
 				<div class="col-sm-6">
-					<div class="pfblock-header wow fadeInUp">
-						<p class="text-left">
-							Canopy Care provides high-quality healthcare for your child that is accessible, affordable and convenient for <em>you</em>.
-						</p>
-						<p class="text-left">
-							With us, you have constant and frequent access to your dedicated pediatric nurse practitioner. We are always one call or text away, and we come to you whenever you need us.
-						</p>
-						<p class="text-left">
-							Your child’s health matters. So does your peace of mind. We take care of both.
-						</p>
+					<div class="visible-xs">
+						<br>
 					</div>
+
+					<!--<div class="pfblock-header wow fadeInUp">-->
+					<h3 class="text-center">Answers to Common Questions</h3>
+					<!--</div>-->
+
+					<div class="panel-group text-center" id="accordion" role="tablist" aria-multiselectable="false">
+
+					<div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
+						<div class="panel-heading" role="tab" id="heading0">
+							<a data-toggle="collapse" data-target="#collapse0" href="javascript:" aria-expanded="true" aria-controls="collapse0" data-parent="#accordion">
+							  <h4 class="panel-title">What does canopy care do?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+						  <div class="panel-body">
+							We provide pediatric health services through telepresence and in-home visits. This includes consultations, diagnoses, management, treatment, and prescriptions.
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
+						<div class="panel-heading" role="tab" id="heading1">
+							<a data-toggle="collapse" data-target="#collapse1" href="javascript:" aria-expanded="true" aria-controls="collapse1" data-parent="#accordion">
+							  <h4 class="panel-title">How much does canopy care cost?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
+						  <div class="panel-body">
+							Membership to Canopy Care costs $60 per month (plus tax). All tele-health services are provided with the membership. In-home visits cost $120/month (plus tax).
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".3s">
+						<div class="panel-heading" role="tab" id="heading2">
+							<a data-toggle="collapse" data-target="#collapse2" href="javascript:" aria-expanded="true" aria-controls="collapse2" data-parent="#accordion">
+							  <h4 class="panel-title">Do we accept insurance?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+						  <div class="panel-body">
+							No, we do not accept insurance. However, depending on your insurance plan, canopy care payments may count toward your deductible or be reimbursed by your FSA/HSA.
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".5s">
+						<div class="panel-heading" role="tab" id="heading3">
+							<a data-toggle="collapse" data-target="#collapse3" href="javascript:" aria-expanded="true" aria-controls="collapse3" data-parent="#accordion">
+							  <h4 class="panel-title">How do I join?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+						  <div class="panel-body">
+							Fill out the form above. We will get in touch with you to set up your membership.
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".3s">
+						<div class="panel-heading" role="tab" id="heading4">
+							<a data-toggle="collapse" data-target="#collapse4" href="javascript:" aria-expanded="true" aria-controls="collapse4" data-parent="#accordion">
+								<h4 class="panel-title">How do I reach my provider?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
+						  <div class="panel-body">
+							Contact your provider directly on their personal phone and e-mail. When you need to see them face-to-face, they will come to you.
+						  </div>
+						</div>
+					  </div>
+
+					  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
+						<div class="panel-heading" role="tab" id="heading5">
+							<a data-toggle="collapse" data-target="#collapse5" href="javascript:" aria-expanded="true" aria-controls="collapse5" data-parent="#accordion">
+							  <h4 class="panel-title">When can I reach my provider?</h4>
+							</a>
+							<i class="indicator fa fa-chevron-up pull-left"></i>
+						</div>
+						<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
+						  <div class="panel-body">
+							Anytime! No appointments or screenings required.
+						  </div>
+						</div>
+					  </div>
+
+					</div><!-- end accordion -->
+				</div>
+			</div><!-- end row -->
+		</div><!-- .container -->
+
+	</section>
+	<!-- How It Works end -->
+
+	<!-- Team start -->
+	<section id="team" class="pfblock pfblock-gray">
+		<div class="container">
+
+			<div class="row">
+
+				<h2 class="pfblock-title text-center">Team</h2>
+				<div class="pfblock-line"></div>
+
+				<p>Canopy Care is made up of board-certified pediatric nurse practitioners. We are local to the Seattle area, and experienced in primary care. Nurse Practitioners are known for approaching their patients holistically and from all health aspects: physical well-being, mental health, nutrition, and preventative practices.</p>
+
+				<br>
+
+				<div class="row">
+
+					<div class="col-sm-6">
+						<h3>Featured Provider in the Seattle Area</h3>
+
+						<div class="col-sm-6">
+							<div class="wow slideInRight">
+								<img class="img-responsive" src="../static/images/rachel.jpg">
+							</div>
+						</div>
+
+						<div class="col-sm-6">
+							<p style="color:darkred; margin-bottom: -5px">Rachel, ARNP</p>
+
+							<i class="fa fa-2x fa-star-o" style="color:#baba00"></i>
+							<i class="fa fa-2x fa-star-o" style="color:#baba00"></i>
+							<i class="fa fa-2x fa-star-o" style="color:#baba00"></i>
+							<i class="fa fa-2x fa-star-o" style="color:#baba00"></i>
+							<i class="fa fa-2x fa-star-o" style="color:#baba00"></i>
+
+							<p class="small" style="margin-bottom: 1px"><strong>Years Practicing</strong>: 4</p>
+							<p class="small" style="margin-bottom: 1px"><strong>Education:</strong> Master's of Science in Nursing-Pediatric Specialty</p>
+							<p class="small" style="margin-bottom: 1px"><strong>Board Certification:</strong> American Nurses Credentialing Center</p>
+							<p class="small" style="margin-bottom: 1px"><strong>Specialties:</strong> General Pediatrics, Adolescent Health, Gastroenterology, and Concussions</p>
+							<p class="small" style="margin-bottom: 1px">Rachel believes that each child is an individual and should be treated and cared for based on his or her specific needs.</p>
+						</div>
+					</div>
+
+					<div class="visible-xs"><br></div>
+
+					<div class="col-sm-6">
+						<h3>Here's what our clients are saying</h3>
+
+						<!--<div class="row">-->
+							<!--<div class="col-sm-6">-->
+								<!--<img class="img-responsive" src="http://placehold.it/600x400">-->
+							<!--</div>-->
+							<!--<div class="col-sm-6">-->
+						<p>"Rachel has provided me with advice and her professional opinion in a number of situations related to the health of my daughter. As a first time mom, the comfort I gain by consulting with someone who is well-informed and enthusiastic about pediatric health, is priceless.</p>
+						<p>Rachel has always responded to my questions promptly and with thorough explanations. She is naturally nurturing so she has an ability to put my mind at ease and I am able to trust her expertise.”</p>
+						<p>—Alicia, mother of 1</p>
+					</div>
+				</div>
+
+			</div><!-- end row -->
+		</div><!-- .container -->
+
+	</section>
+	<!-- Team end -->
+
+	<!-- Mission start -->
+	<section id="mission" class="pfblock pfblock-white">
+		<div class="container">
+
+			<div class="row">
+
+				<h2 class="pfblock-title text-center">Mission</h2>
+				<div class="pfblock-line"></div>
+
+				<div class="col-sm-12">
+					<p>Canopy Care believes every parent should have constant, personal, and affordable access to a knowledgeable and committed health care provider. This form of high-touch and interactive care will improve each child's long-term health and each parent's peace of mind.</p>
 				</div>
 
 			</div><!-- end row -->
@@ -292,292 +477,9 @@
         <!--</a>-->
 
 	</section>
-
 	<!-- Mission end -->
-    
-	<!-- How It Works start -->
-
-	<section id="works" class="pfblock">
-		<div class="container">
-
-			<div class="row">
-
-				<div class="col-sm-6 col-sm-offset-3">
-
-					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">How Does It Work?</h2>
-						<div class="pfblock-line"></div>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-			<div class="row">
-
-				<div class="col-sm-4">
-
-					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay=".1s">
-						<div class="iconbox-icon">
-							<span class="icon-login small"></span> Submit Request
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Web Design</h3>-->
-							<div class="iconbox-desc">
-								Complete the contact form above for a free phone consultation. Decide if our service works for you.
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-sm-4">
-
-					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay=".6s">
-						<div class="iconbox-icon">
-							<span class="icon-check small"></span> Subscribe
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Web Programming</h3>-->
-							<div class="iconbox-desc">
-								See our detailed policy <a href="javascript:" onclick="show_pricing();">here</a>.
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<div class="col-sm-4">
-
-					<div class="iconbox-gray wow fadeInRightBig" data-wow-delay="1.1s">
-						<div class="iconbox-icon">
-							<span class="icon-emoticon-smile small"></span> Enjoy
-						</div>
-						<div class="iconbox-text">
-							<!--<h3 class="iconbox-title">Branding</h3>-->
-							<div class="iconbox-desc">
-								Enjoy direct access to your provider as well as our support staff at Canopy. For face-to-face visits, we will come to you for a flat fee.
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-		</div><!-- .container -->
-
-	</section>
-
-	<!-- How It Works end -->
-    
-    <!-- FAQ start -->
-    
-    <section class="pfblock pfblock-gray" id="faq">
-		
-			<div class="container">
-
-				<div class="row skills">
-
-					<div class="row" style="margin: 0 auto">
-
-                        <div class="col-sm-12">
-
-                            <div class="pfblock-header wow fadeInUp">
-                                <h2 class="pfblock-title">Frequently Asked Questions</h2>
-                                <div class="pfblock-line"></div>
-                            </div>
-
-							<div class="panel-group text-center" id="accordion" role="tablist" aria-multiselectable="false">
-
-							<div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
-								<div class="panel-heading" role="tab" id="heading0">
-									<a data-toggle="collapse" data-target="#collapse0" href="javascript:" aria-expanded="true" aria-controls="collapse0" data-parent="#accordion">
-									  <h4 class="panel-title">How do I subscribe?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
-								  <div class="panel-body">
-								    <p>We offer subscription to Canopy Care on a “pay as you go,” month-by-month basis at $60/month (plus applicable taxes). The minimum commitment is two months, due upon initiation, after which each following month is charged (roughly) every 30 days. You can cancel at any time, at which point your subscription service will conclude at the end of the current month’s cycle.</p>
-									<p>As part of the subscription, we offer in-home visits at $120/visit (plus applicable taxes). Your practitioner comes to your preferred location and brings their own equipment. Payment is due at time of service. In-home visits are strictly voluntary, and not a requirement for subscription.</p>
-									<p>We accept payment via credit and debit card only. We provide itemized receipts in the case that your insurance plan accepts Canopy’s service as a medical claim against your deductible, or for reimbursement from your Flexible Spending Account (FSA) and Health Savings Account (HSA).</p>
-								  </div>
-								</div>
-							  </div>
-
-							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
-								<div class="panel-heading" role="tab" id="heading1">
-									<a data-toggle="collapse" data-target="#collapse1" href="javascript:" aria-expanded="true" aria-controls="collapse1" data-parent="#accordion">
-									  <h4 class="panel-title">What is a Pediatric Nurse Practitioner (PNP)?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse1" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1">
-								  <div class="panel-body">
-									A PNP is an Advanced Registered Nurse Practitioner who specializes in the diagnosis, treatment, and management of infants, children, adolescents, and young adults, ages 0-21 (this does including prescribing medications). He or she has to have either a Master’s of Science in Nursing or a Doctor of Nursing Practice from a reputable program to be allowed to sit for national board certification in pediatrics. Once this has been achieved, a PNP has to be licensed in the state he/she practices. Each state has different laws for how much PNPs can do, though they are fully capable from their training to act independently as primary care providers. All university programs, the National Association of Pediatric Nurse Practitioners, the American Association of Nurse Practitioners, as well as the Institute of Medicine agree that Nurse Practitioners should practice to the full extent of their education. Nurse Practitioners are known for being holistic and approaching their patients from all health aspects: physical well-being, mental health, nutrition, preventative practices (including integrative health), and the acute disease process. All of our PNPs are board-certified in Pediatrics.
-								  </div>
-								</div>
-							  </div>
-
-							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".3s">
-								<div class="panel-heading" role="tab" id="heading2">
-									<a data-toggle="collapse" data-target="#collapse2" href="javascript:" aria-expanded="true" aria-controls="collapse2" data-parent="#accordion">
-									  <h4 class="panel-title">Are we an insurance provider?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
-								  <div class="panel-body">
-									No, we are not an insurance provider. Our PNPs are trained to consult, diagnose, and treat to the best of their ability, and in accordance with our Best Practices. This does not constitute insurance in the event of an emergency or other acute illnesses. In such cases, our PNPs will be quick to advise patients to seek emergency services.
-								  </div>
-								</div>
-							  </div>
-
-							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".5s">
-								<div class="panel-heading" role="tab" id="heading3">
-									<a data-toggle="collapse" data-target="#collapse3" href="javascript:" aria-expanded="true" aria-controls="collapse3" data-parent="#accordion">
-									  <h4 class="panel-title">Do we accept insurance as payment?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
-								  <div class="panel-body">
-									No, we do not accept insurance. At Canopy, we don’t believe in holding families responsible if insurance does not cover our services. Instead of constantly worrying what your policy will or won’t cover, our subscription and flat fee model gives you certainty that you can receive the care your child needs at a reasonable cost to you.
-								  </div>
-								</div>
-							  </div>
-
-							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".3s">
-								<div class="panel-heading" role="tab" id="heading4">
-									<a data-toggle="collapse" data-target="#collapse4" href="javascript:" aria-expanded="true" aria-controls="collapse4" data-parent="#accordion">
-								  		<h4 class="panel-title">When can I contact my dedicated PNP?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse4" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading4">
-								  <div class="panel-body">
-									Anytime! Our PNPs are here to serve you when you need it most, or whenever you need it period. No appointments, no screening, just direct access to the care you need through messages, e-mail, and calls. If face-to-face interaction is required, we offer in-home visits at affordable, flat prices.
-								  </div>
-								</div>
-							  </div>
-
-							  <div class="panel panel-default wow fadeInLeftBig" data-wow-delay=".1s">
-								<div class="panel-heading" role="tab" id="heading5">
-									<a data-toggle="collapse" data-target="#collapse5" href="javascript:" aria-expanded="true" aria-controls="collapse5" data-parent="#accordion">
-									  <h4 class="panel-title">Do we have a brick-and-mortar clinic?</h4>
-									</a>
-									<i class="indicator fa fa-chevron-up pull-left"></i>
-								</div>
-								<div id="collapse5" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading5">
-								  <div class="panel-body">
-									No, we do not operate out from a physical location. Our PNPs operate locally from their own homes or offices, and come to you in the event of a live meeting. In such cases, they are fully equipped with the standard medical equipment needed for primary care. All other communication occurs through messaging, e-mail, and telephone. In all cases you need not worry about traveling to and waiting at a physical clinic just to receive the care you need.
-								  </div>
-								</div>
-							  </div>
-
-							</div><!-- end accordion -->
-
-                        </div>
-
-                    </div><!-- .row -->
-
-				</div><!--End row -->
-
-			</div>
-		
-    </section>
-    
-    <!-- FAQ end -->
-
-	<!-- CallToAction start -->
-
-	<!--<section class="calltoaction">-->
-		<!--<div class="container">-->
-
-			<!--<div class="row">-->
-
-				<!--<div class="col-md-12 col-lg-12">-->
-					<!--<h2 class="wow slideInRight" data-wow-delay=".1s">ARE YOU READY TO START?</h2>-->
-					<!--<div class="calltoaction-decription wow slideInRight" data-wow-delay=".2s">-->
-						<!--I'm available for freelance projects.-->
-					<!--</div>-->
-				<!--</div>-->
-
-				<!--<div class="col-md-12 col-lg-12 calltoaction-btn wow slideInRight" data-wow-delay=".3s">-->
-					<!--<a href="#contact" class="btn btn-lg">Hire Me</a>-->
-				<!--</div>-->
-
-			<!--</div>&lt;!&ndash; .row &ndash;&gt;-->
-		<!--</div>&lt;!&ndash; .container &ndash;&gt;-->
-	<!--</section>-->
-
-	<!-- CallToAction end -->
-
-	<!-- About Us start -->
-
-	<section id="about" class="pfblock pfblock-white">
-
-		<div class="container">
-            
-            <div class="row">
-
-				<div class="col-sm-12">
-
-					<div class="pfblock-header wow fadeInUp">
-						<h2 class="pfblock-title">About Us</h2>
-						<div class="pfblock-line"></div>
-						<p class="text-left">
-							Canopy Care is a small business founded by an experienced Pediatric Nurse Practitioner and a few associates. We were unsatisfied with the lack of access and convenience that parents had for medical services. Protecting a child’s health is a 24/7 operation. Canopy strives to be a trusted partner in that task based on three core tenets:
-						</p>
-					</div>
-
-				</div>
-
-			</div><!-- .row -->
-
-			<div class="row">
-				<div class="col-sm-2">
-					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/hands.jpg" style="margin: 0 auto;">
-					</div>
-				</div>
-				<div class="col-sm-10">
-					<p><strong>Personal</strong>: unlike conglomerate insurance companies and hospital networks, you work with a dedicated provider that knows your child and your family.  Your child’s medical history is securely documented, and always available to you.</p>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-sm-2">
-					<div class="wow slideInRight">
-						<img class="img-responsive" src="../static/images/health-tech.jpg" style="margin: 0 auto;">
-					</div>
-				</div>
-				<div class="col-sm-10">
-					<p><strong>Accessible</strong>: your practitioner is always a message or call away, and when visits are needed we come to you or where your child is. No hassle, no stress.</p>
-				</div>
-			</div>
-			<br>
-			<div class="row">
-				<div class="col-sm-2">
-					<div class="wow slideInRight">
-						<!--<img class="img-responsive" src="http://placehold.it/100x100">-->
-						<img class="img-responsive" src="../static/images/bridge.jpg" style="margin: 0 auto;">
-					</div>
-				</div>
-				<div class="col-sm-10">
-					<p><strong>Long-term</strong>: we help you achieve wellness for your child through preventative medicine, consultation, and guidance. We aim to be a trusted partner in your child's long-run development.</p>
-				</div>
-			</div>
-					
-		</div>
-	</section>
-
-	<!-- About Us end -->
-
 
 	<!-- Careers start -->
-
 	<section id="careers" class="pfblock pfblock-gray">
 		<div class="container">
 			<div class="row">
@@ -611,14 +513,14 @@
 						<li>Work directly with their patients on an ongoing basis through a modern, multi-dimensional platform,</li>
 						<li>Take ownership in their patients’ overall health and wellness.</li>
 					</ul>
-					<p>
-						We succeed when our patients are happy and healthy, not through insurance reimbursements, and we welcome all PNPs who share that same vision.
-					</p>
+					<!--<p>-->
+						<!--We succeed when our patients are happy and healthy, not through insurance reimbursements, and we welcome all PNPs who share that same vision.-->
+					<!--</p>-->
 					<!--<p>-->
 						<!--Are you a soon-to-be PNP? Canopy welcomes interns as well! Interns help with the consultation process, medical records management, and get exposure to our network of PNPs and health professionals. It is a great way for aspiring practitioners to get exposed to modern, transformational pediatric care.-->
 					<!--</p>-->
 					<p>
-						If interested, please send a resume and cover letter to <a href="mailto:careers@canopy.care?Subject=[CanopyCare]%20Careers" target="_top">careers@canopy.care</a> or upload here.
+						Please send a resume and cover letter to <a href="mailto:careers@canopy.care?Subject=[CanopyCare]%20Careers" target="_top">careers@canopy.care</a> or upload here.
 					</p>
 
 					<button id="toggle-dropzone-btn" class="btn btn-lg btn-block wow fadeInUp" data-wow-delay=".3s" onclick="toggle_dropzone()" style="margin-bottom: 10px">
@@ -635,7 +537,6 @@
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</section>
-
 	<!-- Careers end -->
 
 	<!-- Footer start -->
@@ -657,8 +558,21 @@
 					<!--<p class="heart">-->
                         <!--Made with <span class="fa fa-heart fa-2x animated pulse"></span> in Nottingham-->
                     <!--</p>-->
+
+					<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>-->
+
+					<!--<div id="terms" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">-->
+					  <!--<div class="modal-dialog modal-lg">-->
+						<!--<div class="modal-content">-->
+						  <!--...-->
+						<!--</div>-->
+					  <!--</div>-->
+					<!--</div>-->
+
+
+
                     <p class="copyright">
-                        © 2015 Canopy Care. All Rights Reserved <!-- | <a href="#">Terms of Use</a> | <a href="#">Privacy Policy</a> -->
+                        © 2015 Canopy Care. All Rights Reserved | <a href="#" data-toggle="modal" data-target="#terms">Terms of Use</a> | <a href="#" data-toggle="modal" data-target="#privacy">Privacy Policy</a>
 					</p>
 
 				</div>
@@ -666,6 +580,75 @@
 			</div><!-- .row -->
 		</div><!-- .container -->
 	</footer>
+
+	<div id="terms" class="modal fade">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<i class="fa fa-times-circle"></i>
+			</button>
+			<h4 class="modal-title">Terms of Use</h4>
+		  </div>
+		  <div class="modal-body" style="color:black">
+			<p>Stuff</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+	<div id="privacy" class="modal fade">
+	  <div class="modal-dialog modal-lg">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<i class="fa fa-times-circle"></i>
+			</button>
+			<h4 class="modal-title">Privacy Policy</h4>
+		  </div>
+		  <div class="modal-body" style="color:black">
+			  <p>
+				  This site is owned and operated by Canopy Care, Inc.  Your privacy is extremely important to us and we
+				  make every effort to insure that it is protected.
+			  </p>
+			  <p>
+				  Canopy Care collects anonymous non-personal information such as your Internet IP address and
+				  referring URLs so that we may generate aggregate statistical reports.  Additionally, we make use of
+				  cookies to temporarily store information on your local computer so that we may remember your
+				  personal preferences.  These cookies are accessible only to Canopy Care.
+			  </p>
+			  <p>
+				  Canopy Care provides a variety of services which may or may not require you to enter personal
+				  information.  In such cases, your personal information is used only to provide the service for which you
+				  are subscribing. Canopy Care does not rent, sell, or share personal information about you with other
+				  people or non-affiliated companies.
+			  </p>
+			  <p>
+				  Canopy Care uses third-party advertising companies to serve ads when you visit our Web site. These
+				  companies may use aggregated information (not including your name, address, email address or
+				  telephone number) about your visits to this and other Web sites in order to provide advertisements
+				  about goods and services of interest to you.
+			  </p>
+			  <p>
+				  Canopy Care may update this policy. If you have provided your Email address and opted to receive
+				  announcements from us, we will notify you about significant changes in the way we treat personal
+				  information.
+			  </p>
+			  <p>
+				  If you have any questions about our privacy policy, please feel free to contact us at
+				  <a href="mailto:privacy@canopy.care?Subject=[CanopyCare]%20Privacy" target="_top">privacy@canopy.care</a>
+			  </p>
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 	<!-- Footer end -->
 
@@ -685,9 +668,9 @@
 	<script src="../static/js/imagesloaded.pkgd.js"></script>
 	<script src="../static/js/jquery.sticky.js"></script>
 	<script src="../static/js/smoothscroll.js"></script>
-	<script src="../static/js/wow.min.js"></script>
-    <script src="../static/js/waypoints.min.js"></script>
-    <script src="../static/js/jquery.cbpQTRotator.js"></script>
+	<!--<script src="../static/js/wow.min.js"></script>-->
+    <!--<script src="../static/js/waypoints.min.js"></script>-->
+    <!--<script src="../static/js/jquery.cbpQTRotator.js"></script>-->
 	<!--<script src="../static/js/cbpAnimatedHeader.js"></script>-->
 	<!--http://tympanus.net/codrops/2013/06/06/on-scroll-animated-header/-->
 	<script src="../static/js/dropzone.js"></script>

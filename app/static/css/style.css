@@ -168,6 +168,18 @@ textarea.form-control {
     min-width: 100%;
 }
 
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.pull-bottom {
+    display: inline-block;
+    vertical-align: bottom;
+    float: none;
+}
+
 /* ---------------------------------------------- /*
  * Custom button style
 /* ---------------------------------------------- */
@@ -351,9 +363,9 @@ textarea.form-control {
 }
 
 #fb-like-mobile {
-	position: relative;
-	top: -30px;
-	/*right: 100px;*/
+	position: absolute;
+	top: 14px;
+	right: 90px;
 }
 /*.fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr {*/
    /*display: none !important;*/
@@ -378,14 +390,19 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #home {
-	/*background: url("https://placehold.it/1200x750");*/
-	/*background: url("../images/background.jpg");*/
-	background: white url("../images/children-bubbles.jpg") no-repeat 50% 50%;
+	/*background-size: 100%;*/
+	/*background-size: cover;*/
+	/*vertical-align: top;*/
+	/*background: white url("../images/girl-bear.jpg") center center;*/
+	/*background: white url("../images/children-bubbles.jpg") no-repeat 50% 50%;*/
+	background: white url("../images/girl-bear.jpg") top;
 	-webkit-background-size: cover;
 	   -moz-background-size: cover;
 		 -o-background-size: cover;
 			background-size: cover;
-	padding: 0;
+	vertical-align: top;
+	margin-top: -4px;
+	top: 0;
 }
 
 .home-overlay {
@@ -427,20 +444,32 @@ textarea.form-control {
 }
 
 .box {
-    /*margin-bottom: 5px;*/
-    padding: 15px;
+    padding: 10px;
     background: #fff;
 	opacity: 90;
     background: rgba(255,255,255,0.90);
-    border-radius: 2px;
+    border-radius: 4px;
 }
+
+.faded {
+	opacity: 50;
+	background: rgba(255,255,255,0.50);
+}
+
+/*.box-shade {*/
+    /*margin-bottom: 15px;*/
+    /*background: #000;*/
+    /*background: rgba(0,0,0,0.3);*/
+    /*border-radius: 4px;*/
+/*}*/
 
 #tagline {
 	font-family: "Raleway", "Times New Roman", Times, sans-serif;
-	font-style: italic;
+	/*font-style: italic;*/
+	color: black;
 	margin-top: 20px;
 	font-size: 18px;
-	font-weight: 400;
+	font-weight: 700;
 	letter-spacing: .05em;
 }
 
@@ -450,6 +479,42 @@ textarea.form-control {
 	opacity: 30;
     background: rgba(47,123,75,0.30);
     border-radius: 2px;
+}
+
+.carousel-indicators .active {
+	background: #31708f;
+}
+.content {
+	margin-top:20px;
+}
+.adjust1 {
+	float:left;
+	width:100%;
+	margin-bottom:0;
+}
+.adjust2 {
+	margin:0;
+}
+.carousel-indicators li {
+	border :1px solid #ccc;
+}
+.carousel-control {
+	color:#31708f;
+	width:5%;
+}
+.carousel-control:hover, .carousel-control:focus {
+	color:#31708f;
+}
+.carousel-control.left, .carousel-control.right {
+	background-image: none;
+}
+.media-object {
+	margin:auto;
+	margin-top:15%;
+}
+
+@media screen and (max-width: 768px) {
+	.media-object{ margin-top:0; }
 }
 
 /* ---------------------------------------------- /*
@@ -609,6 +674,7 @@ textarea.form-control {
 	font-family: Raleway, sans-serif;
 	font-weight: bold;
 	margin-bottom: -2px;
+	min-height: 52px;
 }
 
 .navbar-custom,
@@ -664,6 +730,10 @@ textarea.form-control {
 
 .navbar-custom .navbar-toggle .icon-bar {
 	background: #222;
+}
+
+.custom-collapse {
+	background-color: white;
 }
 
 #menu-text {

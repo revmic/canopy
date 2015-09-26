@@ -56,29 +56,31 @@
 		screen.height();
 		//alert($(window).width());
 
-		if (screen.height() < 1000 && $(window).width() <= 768) {
-			screen.height(1000);
-		}
+		//if (screen.height() < 1000 && $(window).width() <= 768) {
+		//	screen.height(1000);
+		//}
+        //
+		//if ($(window).width() < 450) {
+		//	screen.height(3 * $(window).width())
+		//}
 
-		if ($(window).width() < 450) {
-			screen.height(3 * $(window).width())
-		}
-
+		screen.height($(window).height());
 		$(window).resize(function() {
 			toggle_facebook_like();
 
-			if (screen.height() < 1000) {
-				screen.height($(window).height());
-			}
-			if ($(window).width() < 450) {
-				screen.height(3 * $(window).width())
-			}
+			//if (screen.height() < 1000) {
+			//	screen.height($(window).height());
+			//}
+			//if ($(window).width() < 450) {
+			//	screen.height(3 * $(window).width())
+			//}
 		});
 
 		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) {
 			$('#home').css({'background-attachment': 'scroll'});
+			screen.height(3.33 * $(window).width())
 		} else {
-			$('#home').parallax('50%', 0.1);
+			//$('#home').parallax('50%', 0.1);
 			// Focus cursor on contact form
 			$("input:text:visible:first").focus();
 		}
@@ -88,10 +90,10 @@
 		 * WOW Animation
 		/* ---------------------------------------------- */
 
-		wow = new WOW({
-			mobile: false
-		});
-		wow.init();
+		//wow = new WOW({
+		//	mobile: false
+		//});
+		//wow.init();
 
 
 		/* ---------------------------------------------- /*
